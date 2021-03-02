@@ -1,0 +1,25 @@
+.sec-btn {
+    text-decoration: none;
+    background: transparent;
+    color: #c4bdbd;
+    border: 2px solid #c4bdbd;
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding: 25px 80px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    margin: 15px 30px;
+  /* animate and time the transitions*/
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    &:hover {
+        text-decoration: none;
+        background-color: white;
+        color: black;
+        -webkit-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+}
