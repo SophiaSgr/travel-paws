@@ -11,5 +11,5 @@ class User < ApplicationRecord
   has_many :shelters
   has_many :animals, through: :requests
 
-  validates :username, presence: true
+  # validates :username, presence: true
 end
