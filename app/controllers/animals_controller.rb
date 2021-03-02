@@ -2,21 +2,24 @@ class AnimalsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @animals = Animal.all
+    @animals = policy_scope(Animal)
   end
 
   def show
     @animal = Animal.find(params[:id])
+    authorize @animal
   end
 
   def new
     @animal = Animal.new
+    authorize @animal
   end
 
   def create
     @shelter = Shelter.find(params[:shelter_id])
     @animal = Animal.new(animal_params)
     @animal.shelter = @shelter
+    authorize @animal
     if @animal.save
       redirect_to shelter_animal_path(@animal), notice: "Animal was successfully created."
     else
