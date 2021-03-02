@@ -6,7 +6,7 @@ class CreateAnimals < ActiveRecord::Migration[6.0]
       t.decimal :weight
       t.string :size
       t.string :age
-      t.text :medical_integer
+      t.text :medical_information
       t.string :race
       t.string :description
       t.references :shelter, null: false, foreign_key: true
