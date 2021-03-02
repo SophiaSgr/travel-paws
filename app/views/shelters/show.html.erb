@@ -8,5 +8,10 @@
   </ul>
 </h2>
 
+<% @shelter.animals.each do |animal|  %>
+ <p> <%= animal.name %> </p>
+ <p> Dropoff: <%= animal.dropoff %> </p>
+ <p> Description: <%= animal.description %> </p>
+<% end %>
 
 <%= link_to 'BACK', shelters_path %>
