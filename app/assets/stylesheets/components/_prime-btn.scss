@@ -1,0 +1,19 @@
+.prime-btn {
+    
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 50px;
+    
+    &:hover {
+        text-decoration: none;
+        background-color:rgb(255, 255, 255);
+        color: black;
+        -webkit-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+
+
+}

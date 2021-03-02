@@ -83,7 +83,8 @@ fifi = Animal.create!(
   medical_information: "flea treatment, vaccinated, chipped",
   description: "A very calm and loving dog. Fifi gets along well with other animals and people. She has no problem to be around young children. She like to play and get cuddled a lot.",
   race: "unknown",
-  shelter: furryfriends
+  shelter: furryfriends,
+  dropoff: "Warsaw, Poland"
 )
 
 tipsy = Animal.create!(
@@ -95,7 +96,8 @@ tipsy = Animal.create!(
   medical_information: "flea treatment, vaccinated, chipped",
   description: "Tipsy is an independent cat with a very calm but playful nature. She has a beautiful coat and stunning green eyes. She likes to do things her own way but is always open for pets and cuddles.",
   race: "unknown",
-  shelter: animalcareev
+  shelter: animalcareev,
+  dropoff: "Athens, Greece"
 )
 
 bifi = Animal.create!(
@@ -107,7 +109,8 @@ bifi = Animal.create!(
   medical_information: "flea treatment, chipped, vaccination outstanding",
   description: "Bifi is a kind natured sausage dog. He came into our ",
   race: "sausage dog",
-  shelter: lifeforanimals
+  shelter: lifeforanimals,
+  dropoff: "Berlin, Germany"
 )
 
 claude = Animal.create!(
