@@ -68,7 +68,7 @@ furryfriends =  Shelter.create!(
 animalcareev = Shelter.create!(
  name: "Animal Care e.V.",
   address: "Traunreut, Germany",
-  description: "Our small shelter in Lisbon helps stray city animals find new, forever homes. We depend on private fundings and are a non-state funded shelter. Any help is valuable. Currently we have 55 animals in care.",
+  description: "We are a shelter with a community and volunteers from many backgrounds trying to find animals a new, loving home.",
   user: william
 )
 
