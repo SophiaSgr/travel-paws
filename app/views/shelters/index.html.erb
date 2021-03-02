@@ -1,13 +1,16 @@
 
-<h1>The Shelters Near You</h1>
+<h1>Shelters Near You</h1>
+
+
 
 <% @shelters.each do |shelter| %>
-<%= shelter.name %>
+<%= link_to shelter.name, shelter_path(shelter) %>
 <br>
 <%= shelter.address %>
 <br>
 <%= shelter.description %>
 <br>
+
 <% end %>
 
     <% if policy(Shelter).create? %>

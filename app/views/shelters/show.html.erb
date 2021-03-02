@@ -4,6 +4,11 @@
       <%= @shelter.name %> <br>
       <%= @shelter.address %> <br>
       <%= @shelter.description %> <br>
+       <% if @shelter.photos.attached? %>
+        <% shelter.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill %>
+        <% end %>
+      <% end %>
     </li>
   </ul>
 </h2>
@@ -12,6 +17,11 @@
  <p> <%= animal.name %> </p>
  <p> Dropoff: <%= animal.dropoff %> </p>
  <p> Description: <%= animal.description %> </p>
+ <% if animal.photos.attached? %>
+    <% animal.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill %>
+    <% end %>
+  <% end %>
 <% end %>
 
 <%= link_to 'BACK', shelters_path %>
