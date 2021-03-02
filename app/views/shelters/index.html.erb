@@ -10,9 +10,9 @@
 <br>
 <% end %>
 
-
+    <% if policy(Shelter).create? %>
     <%= link_to 'Create Shelter', new_shelter_path, class: 'prime-btn' %>
-
+    <% end  %>
 
     <%= link_to 'Create Shelter', new_shelter_path, class: 'sec-btn' %>
 
