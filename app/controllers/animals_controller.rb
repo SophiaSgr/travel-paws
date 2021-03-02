@@ -1,5 +1,4 @@
 class AnimalsController < ApplicationController
-
   skip_before_action :authenticate_user!, only: :index
 
   def index
@@ -15,8 +14,10 @@ class AnimalsController < ApplicationController
   end
 
   def create
+    @shelter = Shelter.find(params[:shelter_id])
     @animal = Animal.new(animal_params)
-    if @animal.save(params[animal_params])
+    @animal.shelter = @shelter
+    if @animal.save
       redirect_to shelter_animal_path(@animal), notice: "Animal was successfully created."
     else
       render :new
