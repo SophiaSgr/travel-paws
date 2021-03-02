@@ -1,1 +1,7 @@
 <h1>Index</h1>
+
+<% @shelters.each do |shelter| %>
+<%= shelter.name %>
+<%= shelter.address %>
+<%= shelter.description %>
+<% end %>
