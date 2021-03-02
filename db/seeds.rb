@@ -54,7 +54,7 @@ puts 'creating animal friends'
 lifeforanimals = Shelter.create!(
   name: "Life for Animals",
   address: "Crete, Greece",
-  description: "We are a shelter that takes in any kind of stray animals in order to give them another shot at a peaceful life. Currently we have ver 96 animals in our care and appreciate any help the we can get. Especially in terms of funding and transportation as we are a small, non-governmental establishment.",
+  description: "We are a shelter that takes in any kind of stray animals in order to give them another shot at a peaceful life. Currently we have over 96 animals in our care and appreciate any help the we can get. Especially in terms of funding and transportation as we are a small, non-governmental establishment.",
   user: bill
 )
 
