@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+require "open-uri"# This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
@@ -83,7 +83,8 @@ fifi = Animal.create!(
   medical_information: "flea treatment, vaccinated, chipped",
   description: "A very calm and loving dog. Fifi gets along well with other animals and people. She has no problem to be around young children. She like to play and get cuddled a lot.",
   race: "unknown",
-  shelter: furryfriends
+  shelter: furryfriends,
+  dropoff: "Warsaw, Poland"
 )
 
 tipsy = Animal.create!(
@@ -95,7 +96,8 @@ tipsy = Animal.create!(
   medical_information: "flea treatment, vaccinated, chipped",
   description: "Tipsy is an independent cat with a very calm but playful nature. She has a beautiful coat and stunning green eyes. She likes to do things her own way but is always open for pets and cuddles.",
   race: "unknown",
-  shelter: animalcareev
+  shelter: animalcareev,
+  dropoff: "Athens, Greece"
 )
 
 bifi = Animal.create!(
@@ -105,7 +107,22 @@ bifi = Animal.create!(
   size: "60x80cm",
   age: "6",
   medical_information: "flea treatment, chipped, vaccination outstanding",
-  description: "Bifi is a kidn natured sausage dog. He came into our ",
+  description: "Bifi is a kind natured sausage dog. He came into our ",
   race: "sausage dog",
+  shelter: lifeforanimals,
+  dropoff: "Berlin, Germany"
+)
+
+claude = Animal.create!(
+  name: "Claude",
+  animal_type: "dog",
+  weight: "8.2kg",
+  size: "120x100cm",
+  age: "3",
+  medical_information: "flea treatment, chipped, vaccination outstanding",
+  description: "Claude is a pleasure to be around. He is very playful and gets along well in the pack. He is a bit conscious with people he doesn't know but warms up to them quickly.",
   shelter: lifeforanimals
 )
+
+file = URI.open('https://images.unsplash.com/photo-1513350660342-816d92510adf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMTgwOTN8MHwxfHNlYXJjaHw4NHx8Y2h1bmt5JTIwZG9nfGVufDB8fHw&ixlib=rb-1.2.1&q=80&w=1080')
+claude.photos.attach(io: file, filename: 'claude.jpg', content_type: 'image/jpg')
