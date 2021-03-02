@@ -6,7 +6,7 @@ class SheltersController < ApplicationController
   end
 
   def show
-    @shelter = Shelter.find(paramsp[:id])
+    @shelter = Shelter.find(params[:id])
   end
 
   def new
