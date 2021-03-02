@@ -107,13 +107,13 @@ bifi = Animal.create!(
   size: "60x80cm",
   age: "6",
   medical_information: "flea treatment, chipped, vaccination outstanding",
-  description: "Bifi is a kind natured sausage dog. He came into our ",
+  description: "Bifi is a kind natured sausage dog. He came into our shelter 2 years ago and has made great progress. now he has found a forever family and needs transportation there. ",
   race: "sausage dog",
   shelter: lifeforanimals,
   dropoff: "Berlin, Germany"
 )
 
-claude = Animal.create!(
+claude = Animal.new(
   name: "Claude",
   animal_type: "dog",
   weight: "8.2kg",
@@ -121,8 +121,10 @@ claude = Animal.create!(
   age: "3",
   medical_information: "flea treatment, chipped, vaccination outstanding",
   description: "Claude is a pleasure to be around. He is very playful and gets along well in the pack. He is a bit conscious with people he doesn't know but warms up to them quickly.",
-  shelter: lifeforanimals
+  shelter: lifeforanimals,
+  dropoff: "Berlin, Germany"
 )
 
 file = URI.open('https://images.unsplash.com/photo-1513350660342-816d92510adf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMTgwOTN8MHwxfHNlYXJjaHw4NHx8Y2h1bmt5JTIwZG9nfGVufDB8fHw&ixlib=rb-1.2.1&q=80&w=1080')
 claude.photos.attach(io: file, filename: 'claude.jpg', content_type: 'image/jpg')
+claude.save

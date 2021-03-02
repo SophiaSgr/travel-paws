@@ -1,0 +1,17 @@
+
+<div class="container">
+  <%= simple_form_for(@shelter @animal) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :animal_type %>
+    <%= f.input :weight %>
+    <%= f.input :size %>
+    <%= f.input :age %>
+    <%= f.input :medical_information %>
+    <%= f.input :race %>
+    <%= f.input :description %>
+    <%= f.input :dropoff %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
