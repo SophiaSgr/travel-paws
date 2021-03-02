@@ -1,10 +1,12 @@
-<h1>Index</h1>
+<div class="container">
+    <h1>Index</h1>
 
-<% @shelters.each do |shelter| %>
-<%= shelter.name %>
-<%= shelter.address %>
-<%= shelter.description %>
-<% end %>
+    <% @shelters.each do |shelter| %>
+    <%= shelter.name %>
+    <%= shelter.address %>
+    <%= shelter.description %>
+    <% end %>
 
+    <%= link_to 'Create Shelter', new_shelter_path, class: 'prime-btn' %>
+</div>
 
-<%= link_to 'Create Shelter', new_shelter_path  %>
