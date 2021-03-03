@@ -1,29 +1,42 @@
-<h2>
-  <ul>
-    <li>
-      <%= @shelter.name %> <br>
-      <%= @shelter.address %> <br>
-      <%= @shelter.description %> <br>
-       <% if @shelter.photos.attached? %>
-        <% @shelter.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill %>
+<div class="container">
+  <h2>
+    <ul>
+      <li>
+        <%= @shelter.name %> <br>
+        <%= @shelter.address %> <br>
+        <%= @shelter.description %> <br>
+        <% if @shelter.photos.attached? %>
+          <% @shelter.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill %>
+          <% end %>
         <% end %>
+      </li>
+    </ul>
+  </h2>
+
+
+  
+
+    <div class='row'>
+      <% @shelter.animals.each do |animal|  %>
+        <div class='card' style="width: 18rem">
+        <% if animal.photos.attached? %>
+          <div id='card-image'>
+            <% animal.photos.each do |photo| %>
+              <%= cl_image_tag photo.key, id: 'card-image', class: "card-img-top"%>
+            <% end %>
+          </div>
+          <% end %>
+          <div class='card-body'>
+          <p> <%= animal.name %> </p>
+          <p> Dropoff: <%= animal.dropoff %> </p>
+          <p> Description: <%= animal.description %> </p>
+          <%= link_to 'MORE DETAILS', shelter_animal_path(@shelter, animal), class: 'prime-btn' %>
+          </div>
+        </div>
       <% end %>
-    </li>
-  </ul>
-</h2>
+    </div>
+  </div>
+</div>
 
-<% @shelter.animals.each do |animal|  %>
- <p> <%= animal.name %> </p>
- <p> Dropoff: <%= animal.dropoff %> </p>
- <p> Description: <%= animal.description %> </p>
- <% if animal.photos.attached? %>
-    <% animal.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill %>
-    <% end %>
-  <% end %>
-<% end %>
-
-<%= link_to 'MORE DETAILS', shelter_animal_path(@shelter), class: 'prime-btn' %>
-
-<%= link_to 'BACK', shelters_path, class: 'prime-btn' %>
+<%= link_to "back",  shelters_path%>
