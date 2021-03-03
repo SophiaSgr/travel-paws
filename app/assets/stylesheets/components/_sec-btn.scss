@@ -1,8 +1,8 @@
 .sec-btn {
     text-decoration: none;
-    background: transparent;
-    color: #c4bdbd;
-    border: 2px solid #c4bdbd;
+    background: rgb(255, 255, 255);
+    color: #000000;
+    border: 2px solid #000000;
     font-size: 20px;
     letter-spacing: 2px;
     padding: 25px 80px;
@@ -10,16 +10,19 @@
     cursor: pointer;
     display: inline-block;
     margin: 15px 30px;
-  /* animate and time the transitions*/
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
     transition: all 0.4s;
     &:hover {
+        box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+        color: #fff;
+        transform: translateY(-5px);
         text-decoration: none;
-        background-color: white;
-        color: black;
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
         -webkit-transition: all 0.4s;
         -moz-transition: all 0.4s;
         transition: all 0.4s;
+        
     }
 }

@@ -6,6 +6,7 @@ class AnimalsController < ApplicationController
   end
 
   def show
+    @shelter = Shelter.find(params[:shelter_id])
     @animal = Animal.find(params[:id])
     authorize @animal
   end
