@@ -1,22 +1,19 @@
 
 <h1>Shelters Near You</h1>
-
-
-
-<% @shelters.each do |shelter| %>
-<%= link_to shelter.name, shelter_path(shelter) %>
-<br>
-<%= shelter.address %>
-<br>
-<%= shelter.description %>
-<br>
-
-<% end %>
-
+    <div class="container">
+    <% @shelters.each do |shelter| %>
+        <%= link_to shelter.name, shelter_path(shelter) %>
+        <br>
+        <%= shelter.address %>
+        <br>
+        <%= shelter.description %>
+        <br>
+    <% end %>
     <% if policy(Shelter).create? %>
-    <%= link_to 'Create Shelter', new_shelter_path, class: 'prime-btn' %>
-    <% end  %>
-
     <%= link_to 'Create Shelter', new_shelter_path, class: 'sec-btn' %>
+    <% end  %>
+    </div>
+
+    
 
 
