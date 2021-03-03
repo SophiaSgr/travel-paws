@@ -5,7 +5,7 @@
       <%= @shelter.address %> <br>
       <%= @shelter.description %> <br>
        <% if @shelter.photos.attached? %>
-        <% shelter.photos.each do |photo| %>
+        <% @shelter.photos.each do |photo| %>
           <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill %>
         <% end %>
       <% end %>
