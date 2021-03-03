@@ -13,17 +13,27 @@
   </ul>
 </h2>
 
-<% @shelter.animals.each do |animal|  %>
- <p> <%= animal.name %> </p>
- <p> Dropoff: <%= animal.dropoff %> </p>
- <p> Description: <%= animal.description %> </p>
- <% if animal.photos.attached? %>
-    <% animal.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill %>
-    <% end %>
-  <% end %>
-<% end %>
+
+ 
+
+<div class=row>
+  <div class="col s12 m6">
+    <div class='card'>
+      <% @shelter.animals.each do |animal|  %>
+        <p> <%= animal.name %> </p>
+        <p> Dropoff: <%= animal.dropoff %> </p>
+        <p> Description: <%= animal.description %> </p>
+        <% if animal.photos.attached? %>
+          <div id='card-image'>
+            <% animal.photos.each do |photo| %>
+              <img> <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill, id: 'card-image' %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'MORE DETAILS', shelter_animal_path(@shelter), class: 'prime-btn' %>
 
-<%= link_to 'BACK', shelters_path, class: 'prime-btn' %>
