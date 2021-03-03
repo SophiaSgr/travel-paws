@@ -1,19 +1,37 @@
-<% @shelter.animals.each do |animal|  %>
- <p> <%= animal.name %> </p>
- <p> Dropoff: <%= animal.dropoff %> </p>
- <p> Description: <%= animal.description %> </p>
-  <%= animal.animal_type %>
-  <%= animal.weight %>
-  <%= animal.size %>
-  <%= animal.age %>
-  <%= animal.race %>
-  <%= animal.medical_information %>
-  <%= animal.description %>
-  <% if animal.photos.attached? %>
-    <% animal.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill %>
-    <% end %>
-  <% end %>
-<% end %>
+<div class="container flex py-3">
+
+  <div class="container d-flex justify-content-between py-3 shadow">
+
+    <div id="img-main">
+      <% if @animal.photos.attached? %>
+        <% @animal.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 420, width: 420, crop: :fill %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div>
+      <h2> <strong> <%= @animal.name %> </strong>  </h2>
+      <h6> <strong>Destination:</strong> <%= @animal.dropoff %> </p>
+      <p> <strong>Weight:</strong> <%= @animal.weight %> </p>
+      <p> <strong>Size:</strong> <%= @animal.weight %> kg </p>
+      <p> <strong>Race:</strong> <%= @animal.race %> </p>
+      <p> <strong>Medical information:</strong> <%= @animal.medical_information %> </p>
+
+    </div>
+  </div>
+
+
+  <div class="container mt-5">
+    <h3>Allow me to introduce myself:</h3>
+    <p> <%= @animal.description %> </p>
+  </div>
+
+</div>
+
+
+
+
+
 
 <%= link_to 'BACK', shelters_path, class: 'prime-btn'%>
