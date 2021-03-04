@@ -3,7 +3,7 @@
     <div class="col-xs-12 col-lg-8 col-md-6">
       <div class="form">
         <div class="container">
-          <%= simple_form_for(@shelter, @animal) do |f| %>
+          <% simple_form_for(@shelter_id, @animal) do |f| %>
             <%= f.input :name %>
             <%= f.input :animal_type %>
             <%= f.input :weight %>
@@ -14,7 +14,7 @@
             <%= f.input :description %>
             <%= f.input :dropoff %>
             <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-            <%= f.submit, class: 'prime-btn' %>
+            <%= f.submit class: "prime-btn" %>
           <% end %>
         </div>
       </div>
