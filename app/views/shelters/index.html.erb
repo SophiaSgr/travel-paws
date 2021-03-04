@@ -4,15 +4,8 @@
   </div>
 </div>
 
-<<<<<<< HEAD
 <div class="container">
-  <h1>Shelters Near You</h1>
-  <br>
-=======
-
-<div class="container h-100" style="margin-bottom: 60px">
   <div class="row align-middle">
->>>>>>> 7d810fad223dca10601d7b5a38be53b1dd98b91e
     <% @shelters.each do |shelter| %>
       <div class="col-md-6 col-lg-4 column">
         <div class="card gr-3">
@@ -24,19 +17,13 @@
         </div>
       </div>
     <% end %>
-<<<<<<< HEAD
-    <% if policy(Shelter).create? %>
-    <%= link_to 'Create Shelter', new_shelter_path, class: 'sec-btn' %>
-    <% end  %>
-    </div>
-
-
-=======
   </div>
 </div>
->>>>>>> 7d810fad223dca10601d7b5a38be53b1dd98b91e
 
-<% if policy(Shelter).create? %>
-  <%= link_to 'Create Shelter', new_shelter_path, class: 'sec-btn' %>
-<% end  %>
-
+<div class="container justify-content-center align-middle">
+  <div class="button justify-content-center align-middle">
+    <% if policy(Shelter).create? %>
+      <%= link_to 'Create Shelter', new_shelter_path, class: 'sec-btn shelter-center justify-content-center' %>
+    <% end  %>
+  </div>
+</div>
