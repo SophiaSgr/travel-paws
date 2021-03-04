@@ -14,7 +14,7 @@
             <%= f.input :description %>
             <%= f.input :dropoff %>
             <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-            <%= f.submit, class: 'prime-btn' %>
+            <%= f.submit class: 'prime-btn' %>
           <% end %>
         </div>
       </div>
@@ -22,4 +22,4 @@
   </div>
 </div>
 
-<%= link_to "BACK", shelter_animal_path, class: "sec-btn" %>
+<%= link_to "Back", shelter_animal_path, class: "sec-btn" %>

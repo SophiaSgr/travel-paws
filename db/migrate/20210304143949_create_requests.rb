@@ -6,7 +6,7 @@ class CreateRequests < ActiveRecord::Migration[6.0]
       t.boolean :contract_signed
       t.text :message
       t.string :transportation_type
-      t.integer :status
+      t.integer :status, default: 0
 
       t.timestamps
     end
