@@ -1,25 +1,26 @@
-<div class="container">
-  <h2>
-    <ul>
-      <li>
-        <%= @shelter.name %> <br>
-        <%= @shelter.address %> <br>
-        <%= @shelter.description %> <br>
-        <% if @shelter.photos.attached? %>
-          <% @shelter.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill %>
-          <% end %>
-        <% end %>
-      </li>
-    </ul>
-  </h2>
 
 
+
+<% if @shelter.photo.attached? %>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @shelter.photo.key%>')">
+  <% else %>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://source.unsplash.com/600x600/?dogs')">
+  <% end %>
+  <div class="container">
+    <h1><%= @shelter.name %></h1>
+    <h2><%= @shelter.address %> <br><br></h2>
+    <h3><%= @shelter.description %> <br></h3>
+
+  </div>
   
+    
+  </div>
 
+
+<div class="container">
     <div class='row'>
       <% @shelter.animals.each do |animal|  %>
-        <div class='card' style="width: 18rem">
+        <div class='card mr-3' style="width: 18rem">
         <% if animal.photos.attached? %>
           <div id='card-image'>
             <% animal.photos.each do |photo| %>
