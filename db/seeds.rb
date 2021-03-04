@@ -86,7 +86,7 @@ lifeforanimals = Shelter.new(
   user: bill
 )
 file = URI.open('https://images.unsplash.com/photo-1531844251246-9a1bfaae09fc?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTZ8fGNvbW11bml0eXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
-lifeforanimals.photos.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+lifeforanimals.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 lifeforanimals.save
 
 furryfriends =  Shelter.new(
@@ -96,7 +96,7 @@ furryfriends =  Shelter.new(
   user: savannah
 )
 file = URI.open('https://www.onetz.de/sites/default/files/imagecache/ga-large/articlemedia/2020/09/01/3432d4b6-818f-4ef9-86c0-0064024babf8.jpg')
-furryfriends.photos.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+furryfriends.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 furryfriends.save
 
 animalcareev = Shelter.new(
@@ -106,7 +106,7 @@ animalcareev = Shelter.new(
   user: william
 )
 file = URI.open('https://i.ytimg.com/vi/REIGWH6Tedw/maxresdefault.jpg')
-animalcareev.photos.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+animalcareev.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 animalcareev.save
 
 naplespaws = Shelter.new(
@@ -116,7 +116,7 @@ naplespaws = Shelter.new(
   user: bill
 )
 file = URI.open('https://www.careermatch.com/job-prep/wp-content/uploads/sites/2/2017/11/Animal_Shelter_Worker_Profile_Image.jpg')
-naplespaws.photos.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+naplespaws.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 naplespaws.save
 
 ourdogs = Shelter.new(
@@ -126,7 +126,7 @@ ourdogs = Shelter.new(
   user: bill
 )
 file = URI.open('http://www.goodnet.org/photos/620x0/30012_hd.jpg')
-ourdogs.photos.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+ourdogs.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 ourdogs.save
 
 laika = Shelter.new(
@@ -137,7 +137,7 @@ laika = Shelter.new(
 )
 
 file = URI.open('https://dailygazette.com/wp-content/uploads/2020/01/012620_HOPErescue_EM-03.jpg')
-laika.photos.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+laika.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 laika.save
 
 happytails = Shelter.new(
@@ -147,7 +147,7 @@ happytails = Shelter.new(
   user: bill
 )
 file = URI.open('https://media.npr.org/assets/img/2011/05/11/dog-rescue-japan_wide-b61e2e6a716f161c97d1561cd8d48354cc13a48d-s800-c85.jpg')
-happytails.photos.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+happytails.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 happytails.save
 
 animalrescue = Shelter.new(
@@ -157,7 +157,7 @@ animalrescue = Shelter.new(
   user: bill
 )
 file = URI.open('https://live-production.wcms.abc-cdn.net.au/85c3b55e539954483b103f0c2cb919ae?impolicy=wcms_crop_resize&cropH=1351&cropW=2401&xPos=0&yPos=0&width=862&height=485')
-animalrescue.photos.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+animalrescue.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 animalrescue.save
 
 p "CREATED #{Shelter.count} SHELTERS"

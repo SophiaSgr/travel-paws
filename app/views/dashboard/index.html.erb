@@ -1,1 +1,3 @@
-index.hetml.erb
+<% @requests.each do |request| %>
+<%= request.message %>
+<% end %>
