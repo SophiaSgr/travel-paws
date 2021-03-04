@@ -7,13 +7,11 @@ class User < ApplicationRecord
   # validates :username, :email, presence: true, uniqueness: true
   # validates :first_name, :last_name, presence: true
   has_many :shelters
-  has_many :animals, through: :requests
+  has_many :animals, through: :shelters
+  has_many :requests
+  has_many :incoming_requests, through: :animals, source: :requests
 
   def is_shelter_owner?
-    if self.shelters.any?
-      true
-    else
-      false
-    end
+    self.shelters.any? ? true : false
   end
 end

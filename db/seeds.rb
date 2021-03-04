@@ -13,7 +13,7 @@ User.destroy_all
 
 
 
-jimmy = User.new(
+jimmy = User.create!(
   email: 'apple@gmail.com',
   password: 'apple1',
   username: 'jimmylovesanimals',
@@ -22,7 +22,7 @@ jimmy = User.new(
   last_name: "Blue"
 )
 
-william = User.new(
+william = User.create!(
   email:"william@gmail.de",
   first_name:"William",
   last_name:"King",
@@ -31,7 +31,7 @@ william = User.new(
   mobile_number: "0160 27452875"
 )
 
-bill = User.new(
+bill = User.create!(
   email:"bilbo@gmail.de",
   first_name:"Billy",
   last_name:"Frieske",
@@ -39,41 +39,41 @@ bill = User.new(
   password: "123456"
 )
 
-savannah = User.new(
-  email:"savannah@gmail.de",
-  first_name:"Savannah",
-  last_name:"Ochsenknecht",
-  username:"savio",
+savannah = User.create!(
+  email: "savannah@gmail.de",
+  first_name: "Savannah",
+  last_name: "Ochsenknecht",
+  username: "savio",
   password: "123456",
   mobile_number: "0175 2896423"
 )
 
-alty = User.new(
+alty = User.create!(
   email:"Alty@gmail.de",
   first_name:"Alty",
   last_name:"Alty",
   username:"123456",
   password: "123456"
 )
-benny = User.new(
-  email:"benny@gmail.de",
-  first_name:"Benny",
-  last_name:"Benny",
-  username:"123456",
+benny = User.create!(
+  email: "benny@gmail.de",
+  first_name: "Benny",
+  last_name: "Benny",
+  username: "123456",
   password: "123456"
 )
-kiki = User.new(
-  email:"kiki@gmail.de",
-  first_name:"Kiki",
-  last_name:"Kiki",
-  username:"123456",
+kiki = User.create!(
+  email: "kiki@gmail.de",
+  first_name: "Kiki",
+  last_name: "Kiki",
+  username: "123456",
   password: "123456"
 )
-andy = User.new(
-  email:"andy@gmail.de",
-  first_name:"Andy",
-  last_name:"Andy",
-  username:"123456",
+andy = User.create!(
+  email: "andy@gmail.de",
+  first_name: "Andy",
+  last_name: "Andy",
+  username: "123456",
   password: "123456"
 )
 
