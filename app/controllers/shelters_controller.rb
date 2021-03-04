@@ -4,6 +4,12 @@ class SheltersController < ApplicationController
   def index
     @shelters = policy_scope(Shelter)
 
+    if params[:query].present?
+      @shelters = Shelter.near(params[:query], 800)
+    else
+      @shelters = Shelter.all
+    end
+
     @markers = @shelters.geocoded.map do |shelter|
       {
         lat: shelter.latitude,
