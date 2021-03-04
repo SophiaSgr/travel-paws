@@ -1,8 +1,17 @@
 class SheltersController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-  
+
   def index
     @shelters = policy_scope(Shelter)
+
+    @markers = @shelters.geocoded.map do |shelter|
+      {
+        lat: shelter.latitude,
+        lng: shelter.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { shelter: shelter })
+
+      }
+    end
   end
 
   def show
