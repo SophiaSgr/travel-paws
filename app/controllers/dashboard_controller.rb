@@ -8,3 +8,4 @@ class DashboardController < ApplicationController
     @outgoing_requests = current_user.requests
   end
 end
+
