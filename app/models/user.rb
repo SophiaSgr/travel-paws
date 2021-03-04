@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :animals, through: :requests
 
   def is_shelter_owner?
-  if self.shetlers.any?
+  if self.shelters.any?
     true
   else
     false
