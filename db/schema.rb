@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2021_03_04_143949) do
     t.boolean "contract_signed"
     t.text "message"
     t.string "transportation_type"
-    t.integer "status"
+    t.integer "status", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["animal_id"], name: "index_requests_on_animal_id"
