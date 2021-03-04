@@ -7,7 +7,7 @@ class SheltersController < ApplicationController
     if params[:query].present?
       @shelters = Shelter.near(params[:query], 800)
     else
-      @shelters = GrandmotherOffer.all
+      @shelters = Shelter.all
     end
 
     @markers = @shelters.geocoded.map do |shelter|
