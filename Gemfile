@@ -35,6 +35,8 @@ gem 'simple_form'
 
 # Devise
 gem 'devise'
+# Geocoding
+gem 'geocoder'
 
 group :development, :test do
   gem 'pry-byebug'
