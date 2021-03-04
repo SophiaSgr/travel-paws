@@ -12,12 +12,15 @@
 
     <div class="card-product-infos">
         <h1 class="headers-font"> <strong> <%= @animal.name %> </strong> </h1>
-        <p> <strong>Destination:</strong> <%= @animal.dropoff %> </p>
-        <p> <strong>Weight:</strong> <%= @animal.weight %> </p>
-        <p> <strong>Size:</strong> <%= @animal.size %> kg </p>
-        <p> <strong>Race:</strong> <%= @animal.race %> </p>
-        <p> <strong>Medical information:</strong> <%= @animal.medical_information %> </p>
-        <div class="card-product-description">
+        <ul>
+          <p> <em>Destination:</em> <%= @animal.dropoff %> </p>
+          <p> <em>Weight:</em> <%= @animal.weight %> </p>
+          <p> <em>Size:</em> <%= @animal.size %> kg </p>
+          <p> <em>Race:</em> <%= @animal.race %> </p>
+          <p> <em>Medical information:</em> <%= @animal.medical_information %> </p>
+          <div class="card-product-description">
+
+        </ul>
           <p> <%= @animal.description %> </p>
         </div>
     </div>
