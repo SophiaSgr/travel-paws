@@ -38,6 +38,7 @@ $gr-3:linear-gradient(170deg, #C86DD7 0%, #3023AE 100%);
 }
 
 .card{
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("<%= cl_image_path @shelter.photo.key%>");
   min-height:170px;
   margin: 0;
   padding: 1.7rem 1.2rem;
@@ -71,7 +72,7 @@ $gr-3:linear-gradient(170deg, #C86DD7 0%, #3023AE 100%);
   a{
     z-index:3;
     font-size: .7rem;
-    color:rgba(0,0,0,1);
+    color:white;
     margin-left:1rem;
     position:relative;
     bottom: -.5rem;
