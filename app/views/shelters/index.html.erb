@@ -10,6 +10,7 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
 <div class="container h-100" style="margin-bottom: 60px">
+
   <div class="row align-middle">
     <% @shelters.each do |shelter| %>
       <div class="col-md-6 col-lg-4 column">
@@ -25,7 +26,10 @@
   </div>
 </div>
 
-<% if policy(Shelter).create? %>
-  <%= link_to 'Create Shelter', new_shelter_path, class: 'sec-btn' %>
-<% end  %>
-
+<div class="container justify-content-center align-middle">
+  <div class="button justify-content-center align-middle">
+    <% if policy(Shelter).create? %>
+      <%= link_to 'Create Shelter', new_shelter_path, class: 'sec-btn shelter-center justify-content-center' %>
+    <% end  %>
+  </div>
+</div>
