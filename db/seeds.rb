@@ -78,14 +78,61 @@ andy = User.create!(
 )
 
 puts 'CREATED ANIMAL FRIENDS'
+# -----------------------------------------------------------new seeds shelters
+protectimals = Shelter.new(
+  name: "Protectimal",
+  address: "Kithnos, Greece",
+  description: "We are a shelter that takes in any kind of stray animals in order to give them another shot at a peaceful life. Currently we have over 96 animals in our care and appreciate any help the we can get. Especially in terms of funding and transportation as we are a small, non-governmental establishment.",
+  user: savannah
+)
+file = URI.open('https://spcatampabay.org/wp-content/uploads/home_image_banner.jpg')
+protectimals.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+protectimals.save
+protectimals.save
 
+iloveanimals = Shelter.new(
+  name: "I love Animals",
+  address: "Naxos, Greece",
+  description: "We are a shelter that takes in any kind of stray animals in order to give them another shot at a peaceful life. Currently we have over 96 animals in our care and appreciate any help the we can get. Especially in terms of funding and transportation as we are a small, non-governmental establishment.",
+  user: william
+)
+file = URI.open('https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2018/09/animal-rescue-349842.jpg?h=81635869&itok=oXs-nAXK')
+iloveanimals.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+iloveanimals.save
+iloveanimals.save
+
+pawpatrol = Shelter.new(
+  name: "Paw-patrol",
+  address: "Agrinio, Greece",
+  description: "We are a shelter that takes in any kind of stray animals in order to give them another shot at a peaceful life. Currently we have over 96 animals in our care and appreciate any help the we can get. Especially in terms of funding and transportation as we are a small, non-governmental establishment.",
+  user: william
+)
+file = URI.open('https://img.apmcdn.org/67a67513f9d731846f30f3ce76b6532721cc3411/widescreen/63823f-20190128-a-beautiful-world-animal-rescue-01.jpg')
+pawpatrol.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+pawpatrol.save
+pawpatrol.save
+
+patrasanimals = Shelter.new(
+  name: "Patras Animals",
+  address: "Patras, Greece",
+  description: "We are a shelter that takes in any kind of stray animals in order to give them another shot at a peaceful life. Currently we have over 96 animals in our care and appreciate any help the we can get. Especially in terms of funding and transportation as we are a small, non-governmental establishment.",
+  user: savannah
+)
+file = URI.open('https://cdn.sanity.io/images/0vv8moc6/dvm360/e28735abb3f1073399b64e4ee92b900ed556c357-5314x3543.jpg?auto=format')
+patrasanimals.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+patrasanimals.save
+pawpatrol.save
+
+
+# ------------------------------------------------------- old seeds shelters
 lifeforanimals = Shelter.new(
   name: "Life for Animals",
   address: "Crete, Greece",
   description: "We are a shelter that takes in any kind of stray animals in order to give them another shot at a peaceful life. Currently we have over 96 animals in our care and appreciate any help the we can get. Especially in terms of funding and transportation as we are a small, non-governmental establishment.",
   user: bill
 )
-file = URI.open('https://images.unsplash.com/photo-1531844251246-9a1bfaae09fc?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTZ8fGNvbW11bml0eXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+
+file = URI.open('https://cdn.sanity.io/images/0vv8moc6/dvm360/e28735abb3f1073399b64e4ee92b900ed556c357-5314x3543.jpg?auto=format')
 lifeforanimals.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 lifeforanimals.save
 
