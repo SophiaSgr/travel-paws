@@ -5,13 +5,16 @@ class RequestsController < ApplicationController
   end
 
   def create
+    @animal = Animal.find(params[:animal_id])
     @request = Request.new(request_params)
-    if @request.save
-      redirect_to dashboard
-    else
-      render :new
-    end
     authorize @request
+    @request.user = current_user
+    @request.animal = @animal
+    if @request.save
+      redirect_to dashboard_index_path
+    else
+      render "animals/show"
+    end
   end
 
   def accept
@@ -29,7 +32,7 @@ class RequestsController < ApplicationController
 
   private
 
-  def requests_params
+  def request_params
     params.require(:request).permit(:message)
   end
 end

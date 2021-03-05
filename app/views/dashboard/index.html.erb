@@ -1,6 +1,21 @@
-<h1>Welcome to Your Dashboard</h1>
+<div class="format lato">
+  <h1>Welcome to Your Dashboard</h1>
 
-<% @incoming_requests.each do |request| %>
-<%= request.message %>
-<%= request.status %>
-<% end %>
+
+  <% @incoming_requests.each do |request| %>
+  <%= request.message %>
+  <%= request.status %>
+  <% end %>
+
+  <div class="tabs-position">
+    <ul class="list-inline tabs-underlined">
+      <li>
+        <a href="#" class="tab-underlined active">Requests for my Shelter</a>
+      </li>
+      <li>
+        <a href="#" class="tab-underlined">Outgoing Requests</a>
+      </li>
+    </ul>
+  </div>
+
+</div>
