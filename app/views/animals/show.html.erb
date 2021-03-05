@@ -29,3 +29,9 @@
 <div class="container">
   <%= link_to 'BACK', shelters_path, class: 'sec-btn'%>
 </div>
+
+
+ <%= simple_form_for [@animal, @request] do |f| %>
+            <%= f.input :message %>
+            <%= f.submit "Create Request", class: "prime-btn" %>
+          <% end %>
