@@ -32,7 +32,7 @@
           <h2> <%= animal.name %> </h2>
           <h4 id="codepenio"> Dropoff: <%= animal.dropoff %> </h4>
           <div id="hotlinks">
-          <%= link_to 'MORE DETAILS', shelter_animal_path(@shelter, animal), class: 'prime-btn' %>
+          <%= link_to 'MORE DETAILS', animal_path(animal), class: 'prime-btn' %>
           </div>
           </div>
         </div>
