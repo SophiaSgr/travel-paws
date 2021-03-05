@@ -91,7 +91,7 @@ lifeforanimals.save
 
 furryfriends =  Shelter.new(
   name: "Furry Friends",
-  address: "Lisbon, Portugal",
+  address: "Lamia, Greece",
   description: "Our small shelter in Lisbon helps stray city animals find new, forever homes. We depend on private fundings and are a non-state funded shelter. Any help is valuable. Currently we have 55 animals in care.",
   user: savannah
 )
@@ -100,8 +100,8 @@ furryfriends.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image
 furryfriends.save
 
 animalcareev = Shelter.new(
- name: "Animal Care e.V.",
-  address: "Traunreut, Germany",
+ name: "Animal Care Greece",
+  address: "Sparta, Greece",
   description: "We are a shelter with a community and volunteers from many backgrounds trying to find animals a new, loving home.",
   user: william
 )
@@ -110,8 +110,8 @@ animalcareev.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image
 animalcareev.save
 
 naplespaws = Shelter.new(
-  name: "Naples Paws",
-  address: "Naples, Italy",
+  name: "Greek Paws",
+  address: "Galatas, Greece",
   description: "We have lots of wonderful people who will open their hearts to rescue a dog, but we do not have enough flight volunteers to bring our dogs to their new homes. If you would like to help our organization and these innocent animals in desperate need, please spread the word that we are always in need of flight volunteers to accompany our rescues from Naples to Germany and Netherlands.",
   user: bill
 )
@@ -121,8 +121,8 @@ naplespaws.save
 
 ourdogs = Shelter.new(
   name: "Our Dogs",
-  address: "Barcelona, Spain",
-  description: "Our dogs are saved from the streets of Barcelona, Spain. There are so many deserving rescue dogs there desperately searching for forever homes everyday while at risk of dying on the streets or being euthanized. We are looking for volunteers to accompany the dogs already adopted in other parts of Europe.",
+  address: "Idra, Greece",
+  description: "Our dogs are saved from the streets of Idra, Greece. There are so many deserving rescue dogs there desperately searching for forever homes everyday while at risk of dying on the streets or being euthanized. We are looking for volunteers to accompany the dogs already adopted in other parts of Europe.",
   user: bill
 )
 file = URI.open('http://www.goodnet.org/photos/620x0/30012_hd.jpg')
@@ -152,7 +152,7 @@ happytails.save
 
 animalrescue = Shelter.new(
   name: "Animal Rescue",
-  address: "Sofia, Bulgaria",
+  address: "Methana, Greece",
   description: "We are a non-profit organization with a community and volunteers from many backgrounds trying to find animals a new, loving home. We're looking for volunteers to transport dogs and cats rescued from the streets. The most popular travel destinations for our shelter inhabitants are Germany and Netherlands.",
   user: bill
 )

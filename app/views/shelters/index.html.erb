@@ -1,6 +1,6 @@
 <div class="sample-header">
   <div class="sample-header-section">
-    <h1 class="lato bold">Sheelters in and around your distination</h1>
+    <h1 class="lato bold">Shelters in and around your distination</h1>
   </div>
 </div>
 
@@ -10,14 +10,15 @@
 
     <div class="row align-middle">
       <% @shelters.each do |shelter| %>
-        <div class="col-md-6 col-lg-4 column">
-          <div class="card gr-3">
-
-
-            <div class="txt">
-              <h1 class="shelter-h1"><%= link_to shelter.name, shelter_path(shelter), class:"shelterh" %></h1>
-              <p class="shelter-p"><%= shelter.address %></p>
+        <div class="col-md-6 col-lg-6 column">
+          <div class="card">
+            <div class="card-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path shelter.photo.key%>')">
+              <div class="txt">
+                <h1 class="shelter-h1"><%= link_to shelter.name, shelter_path(shelter), class:"shelterh" %></h1>
+                <p class="shelter-p"><%= shelter.address %></p>
+              </div>
             </div>
+
           </div>
         </div>
       <% end %>
