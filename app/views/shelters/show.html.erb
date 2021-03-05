@@ -1,7 +1,4 @@
 
-
-
-
 <% if @shelter.photo.attached? %>
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @shelter.photo.key%>')">
   <% else %>
@@ -33,7 +30,7 @@
           <p> <%= animal.name %> </p>
           <p> Dropoff: <%= animal.dropoff %> </p>
           <p> Description: <%= animal.description %> </p>
-          <%= link_to 'MORE DETAILS', shelter_animal_path(@shelter, animal), class: 'prime-btn' %>
+          <%= link_to 'MORE DETAILS', animal_path(animal), class: 'prime-btn' %>
           </div>
         </div>
       <% end %>
