@@ -38,10 +38,10 @@ $gr-3:linear-gradient(170deg, #C86DD7 0%, #3023AE 100%);
 }
 
 .card{
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("<%= cl_image_path @shelter.photo.key%>");
+  // background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("<%= cl_image_path @shelter.photo.key%>");
   min-height:170px;
   margin: 0;
-  padding: 1.7rem 1.2rem;
+  padding: 0;
   border: none;
   border-radius: 0;
   color:rgba(0,0,0,1);
@@ -51,9 +51,10 @@ $gr-3:linear-gradient(170deg, #C86DD7 0%, #3023AE 100%);
   .txt{
     z-index: 1;
     h1{
-      font-size:20px;
+      font-size: 20px;
       font-weight: 300;
       text-transform: uppercase;
+      margin-top: 150px;
     }
     .shelterh{
       font-size:20px;
@@ -61,7 +62,7 @@ $gr-3:linear-gradient(170deg, #C86DD7 0%, #3023AE 100%);
       text-transform: uppercase;
     }
     p{
-      font-size:10px;
+      font-size:15px;
       font-family: 'Open Sans', sans-serif;
       letter-spacing: 0rem;
       margin-top:33px;
@@ -108,5 +109,10 @@ $gr-3:linear-gradient(170deg, #C86DD7 0%, #3023AE 100%);
     color:rgba(255,255,255,1);
     z-index: 0;
    }
+}
+
+.card-banner{
+  height: 230px;
+  background-size: cover;
 }
 
