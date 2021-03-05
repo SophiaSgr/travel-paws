@@ -1,28 +1,117 @@
-.tabs-underlined {
-  display: flex;
+// .tabs-underlined {
+//   display: flex;
+//   align-items: center;
+// }
+
+// .tabs-underlined .tab-underlined {
+//   color: black;
+//   padding: 8px;
+//   margin: 8px 16px;
+//   opacity: .4;
+//   cursor: pointer;
+//   text-decoration: none;
+//   border-bottom: 4px solid transparent;
+// }
+
+// .tabs-underlined .tab-underlined.active {
+//   opacity: 1;
+//   border-bottom: 3px solid #555555;
+// }
+
+// .tabs-position{
+//   margin: 16px 60px;
+//   float: right;
+
+
+// }
+
+//
+
+// .center-btn{
+//   text-align: center;
+// }
+
+
+// .content-position{
+
+// }
+
+// .position{
+//   margin-right: 10px;
+// }
+
+
+@import url('https://fonts.googleapis.com/css?family=Arimo:400,700&display=swap');
+body{
+  background:#white;
+  font-family: 'Arimo', sans-serif;
+}
+h2{
+  color:#000;
+  text-align:center;
+  font-size:2em;
+}
+.warpper{
+  display:flex;
+  flex-direction: column;
   align-items: center;
 }
-
-.tabs-underlined .tab-underlined {
-  color: black;
-  padding: 8px;
-  margin: 8px 16px;
-  opacity: .4;
+.tab{
   cursor: pointer;
-  text-decoration: none;
-  border-bottom: 4px solid transparent;
+  padding:10px 20px;
+  margin:0px 2px;
+  background:#000;
+  display:inline-block;
+  color:#fff;
+  border-radius:3px 3px 0px 0px;
+  box-shadow: 0 0.5rem 0.8rem #00000080;
+}
+.panels{
+  background:#fffffff6;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  min-height:200px;
+  width:100%;
+  max-width:500px;
+  border-radius:3px;
+  overflow:hidden;
+  padding:20px;
+}
+.panel{
+  display:none;
+  animation: fadein .8s;
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+.panel-title{
+  font-size:1.5em;
+  font-weight:bold
+}
+.radio{
+  display:none;
+}
+#one:checked ~ .panels #one-panel,
+#two:checked ~ .panels #two-panel,
+#three:checked ~ .panels #three-panel{
+  display:block
+}
+#one:checked ~ .tabs #one-tab,
+#two:checked ~ .tabs #two-tab,
+#three:checked ~ .tabs #three-tab{
+  background:#fffffff6;
+  color:#000;
+  border-top: 3px solid #000;
 }
 
-.tabs-underlined .tab-underlined.active {
-  opacity: 1;
-  border-bottom: 3px solid #555555;
-}
-
-.tabs-position{
-  margin: 16px 60px;
+.flex-div-tabs{
+  display: flex;
   float: right;
-
-
+  margin: 35px 60px;
 }
 
 .format{
@@ -31,3 +120,5 @@
     margin-top: 10px;
   }
 }
+
+
