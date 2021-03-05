@@ -1,44 +1,41 @@
 
-
-
-
 <% if @shelter.photo.attached? %>
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @shelter.photo.key%>')">
   <% else %>
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://source.unsplash.com/600x600/?dogs')">
   <% end %>
+  <div class="hero">
   <div class="container">
-    <h1><%= @shelter.name %></h1>
-    <h2><%= @shelter.address %> <br><br></h2>
-    <h3><%= @shelter.description %> <br></h3>
-
+    <h1 class="open-sans tera ls-xlarge bold"><%= @shelter.name %></h1>
+    <h2 class="lato thin ls-xlarge"><%= @shelter.address %></h2>
+    <p class="epsilon normal ls-medium"><%= @shelter.description %></p>
   </div>
-
-
+</div>
   </div>
-
 
 <div class="container">
     <div class='row'>
       <% @shelter.animals.each do |animal|  %>
-        <div class='card mr-3' style="width: 18rem">
+        <div class="infocardContainer">
         <% if animal.photos.attached? %>
-          <div id='card-image'>
+          <div id='main'>
             <% animal.photos.each do |photo| %>
               <%= cl_image_tag photo.key, id: 'card-image', class: "card-img-top"%>
             <% end %>
           </div>
           <% end %>
-          <div class='card-body'>
-          <p> <%= animal.name %> </p>
-          <p> Dropoff: <%= animal.dropoff %> </p>
-          <p> Description: <%= animal.description %> </p>
+          <div id="textbois">
+          <h2> <%= animal.name %> </h2>
+          <h4 id="codepenio"> Dropoff: <%= animal.dropoff %> </h4>
+          <div id="hotlinks">
           <%= link_to 'MORE DETAILS', shelter_animal_path(@shelter, animal), class: 'prime-btn' %>
+          </div>
           </div>
         </div>
       <% end %>
     </div>
+  </div>
+  <div class="container">
     <%= link_to "back",  shelters_path, class: 'sec-btn'%>
   </div>
-</div>
 
