@@ -23,7 +23,7 @@ class AnimalsController < ApplicationController
     @animal.shelter = @shelter
     authorize @animal
     if @animal.save
-      redirect_to shelter_animal_path(@shelter, @animal), notice: "Animal was successfully created."
+      redirect_to animal_path(@animal), notice: "Animal was successfully created."
     else
       render :new
     end
