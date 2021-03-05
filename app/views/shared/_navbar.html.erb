@@ -29,8 +29,8 @@
         <li class="nav-item dropdown">
           <%= image_tag "https://images.unsplash.com/photo-1574158622682-e40e69881006?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My Profile","#", class: "dropdown-item" %>
-            <%= link_to "Shelter Profile", "#", class: "dropdown-item" %>
+            <%= link_to "My Profile", dashboard_index_path, class: "dropdown-item" %>
+            <%= link_to "Shelter Profile", dashboard_index_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
