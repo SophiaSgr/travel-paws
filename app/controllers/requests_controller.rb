@@ -5,6 +5,12 @@ class RequestsController < ApplicationController
   end
 
   def create
+    @request = Request.new(request_params)
+    if @request.save
+      redirect_to dashboard
+    else
+      render :new
+    end
     authorize @request
   end
 
@@ -24,6 +30,6 @@ class RequestsController < ApplicationController
   private
 
   def requests_params
-    require.params(:request).permit(:message)
+    params.require(:request).permit(:message)
   end
 end
