@@ -10,7 +10,9 @@
 
     <div class="card-product-infos">
         <h1 class="headers-font lato bold"> <strong> <%= @animal.name %> </strong> </h1>
+        <br>
         <ul class="lato normal">
+
           <p> <em>Destination:</em> <%= @animal.dropoff %> </p>
           <p> <em>Weight:</em> <%= @animal.weight %> </p>
           <p> <em>Size:</em> <%= @animal.size %> kg </p>
@@ -19,9 +21,6 @@
         </ul>
         <div class="card-product-description">
           <p> <%= @animal.description %> </p>
-          <div class="buttons">
-            <%= link_to 'Be my guardian', shelters_path, class: 'prime-btn'%>
-          </div>
         </div>
     </div>
   </div>
@@ -33,5 +32,5 @@
 
  <%= simple_form_for [@animal, @request] do |f| %>
     <%= f.input :message %>
-    <%= f.submit "Create Request", class: " center-btn prime-btn justify-content-center" %>
+    <%= f.submit "Become my Guardian", class: " center-btn prime-btn justify-content-center" %>
  <% end %>
