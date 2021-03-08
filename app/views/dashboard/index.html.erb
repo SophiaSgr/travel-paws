@@ -24,8 +24,11 @@
 
   <% @incoming_requests.each do |request| %>
     <br>
+    <%= request.username %>
     <%= request.message %>
     <br>
     <%= request.status %>
     <br>
     <% end %>
+
+<% link_to "Messages", chatroom_messages_path %>
