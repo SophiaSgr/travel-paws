@@ -28,18 +28,15 @@ class RequestsController < ApplicationController
 
   def accept
     @request = Request.find(params[:id])
-    @request.status = "accept"
-    @request.save
+    @request.accepted!
     redirect_to dashboard_index_path, notice: "Request Accepted"
     authorize @request
   end
 
   def decline
     @request = Request.find(params[:id])
-    @request.status = "decline"
-    if @request.save
-      redirect_to dashboard_index_path, notice: "Request Decline"
-    end
+    @request.declined!
+    redirect_to dashboard_index_path, notice: "Request Decline"
     authorize @request
   end
 
