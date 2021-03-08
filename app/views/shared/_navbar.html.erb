@@ -3,10 +3,9 @@
 
     <%= link_to "Travel", root_path, class: "navbar-brand .link-styling-navbar lato mr-0" %>
     <div class="d-flex align-items-center">
-      <i class="fas fa-paw "></i>
+      <i class="fas fa-paw"></i>
     </div>
    <%= link_to "Paws", root_path, class: "navbar-brand .link-styling-navbar lato" %>
-    <%= link_to "Create a Shelter", new_shelter_path, class: "navbar-btn-position-size" %>
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,17 +16,20 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Take Me Home", root_path, class: "nav-link" %>
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
+          <%= link_to "All shelters", shelters_path , class: "nav-link" %>
+        </li>
+         <li class="nav-item">
+          <%= link_to "Create a Shelter", new_shelter_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "My Dashboard", dashboard_index_path, class: "nav-link" %>
+          <%= link_to "My Dashboard", dashboard_index_path, class: "nav-link"%>
         </li>
         <li class="nav-item dropdown">
-        
+
         <% if current_user.avatar.attached?  %>
           <%= cl_image_tag current_user.avatar.key, height: 40, width: 40, crop: :fill, class: "avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% else %>
