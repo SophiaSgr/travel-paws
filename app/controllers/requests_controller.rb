@@ -1,5 +1,17 @@
 class RequestsController < ApplicationController
 
+  def show
+    @request = Request.find(params[:id])
+    if @request.chatroom
+      @chatroom = @request.chatroom
+    else
+      @chatroom = Chatroom.create(request: @request)
+    end
+    @user1 = current_user
+    @user2 = @request.animal.shelter.user
+    @message = Message.new
+    authorize @request
+  end
 
   def create
     @animal = Animal.find(params[:animal_id])
@@ -26,7 +38,7 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @request.status = "decline"
     if @request.save
-    redirect_to dashboard_index_path, notice: "Request Decline"
+      redirect_to dashboard_index_path, notice: "Request Decline"
     end
     authorize @request
   end
