@@ -60,10 +60,11 @@ h2{
   margin-bottom:30px;
 
 }
-.warpper{
+.wrapper-tabs{
   display:flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 .tab{
   cursor: pointer;
@@ -117,6 +118,13 @@ h2{
   border-top: 3px solid #000;
 }
 
+.tabs{
+    position: absolute;
+    left: 0px;
+    top: -43px;
+    z-index: 0;
+}
+
 .flex-div-tabs{
   display: flex;
   float: right;
@@ -130,7 +138,11 @@ h2{
   }
 }
 
-.position-tabs {
-  float: left;
-}
+// .position-tabs {
+//   float: left;
+// }
 
+.title-placement{
+  text-align: center;
+  padding-top: 20px;
+}
