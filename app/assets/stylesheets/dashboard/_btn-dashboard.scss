@@ -1,0 +1,29 @@
+.sec-btn-status {
+    text-decoration: none;
+    background: rgb(255, 255, 255);
+    color: #000000;
+    border: 1px solid #000000;
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 8px 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    margin-bottom:20px;
+    margin-top:20px;
+    &:hover {
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        color: #fff;
+        transform: translateY(-5px);
+        text-decoration: none;
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        transition: all 0.2s;
+
+    }
+}
