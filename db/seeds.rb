@@ -320,8 +320,8 @@ swiffer = Animal.new(
 )
 
 file = URI.open('https://i0.wp.com/bestlifeonline.com/wp-content/uploads/2019/01/coton-du-tulear.jpg?resize=1200%2C800&ssl=1')
-claude.photos.attach(io: file, filename: 'swiffer.jpg', content_type: 'image/jpg')
-claude.save
+swiffer.photos.attach(io: file, filename: 'swiffer.jpg', content_type: 'image/jpg')
+swiffer.save
 
 shawn = Animal.new(
   name: "Shawn",
