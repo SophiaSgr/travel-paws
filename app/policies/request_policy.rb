@@ -3,12 +3,12 @@ class RequestPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
-
-    def create?
+  end
+    def new?
       true
     end
 
-    def new?
+    def create?
       true
     end
 
@@ -23,5 +23,4 @@ class RequestPolicy < ApplicationPolicy
     def decline?
       true
     end
-  end
 end
