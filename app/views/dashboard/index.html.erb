@@ -2,12 +2,22 @@
   <h1 class="dash-h lato bold">Your Dashboard</h1>
   <div class="div-tabs">
     <div class="warpper">
-      <input class="radio" id="one" name="group" type="radio" checked>
-      <input class="radio" id="two" name="group" type="radio">
-      <input class="radio" id="three" name="group" type="radio">
+      <input class="radio" id="one" name="group" type="radio" checked />
+      <input class="radio" id="two" name="group" type="radio" />
+      <input class="radio" id="three" name="group" type="radio" />
+      < % @incoming_requests.each do |request| %>
       <div class="tabs">
-        <label class="tab" id="one-tab" for="one">Requests for your Shelter</label>
-        <label class="tab" id="two-tab" for="two">Outgoing Guardian Requests</label>
+        <label class="tab" id="one-tab" for="one"
+          >Requests for your Shelter</label
+        >
+        <%= request.message %>
+        <br />
+        <%= request.status %>
+        <br />
+        <% end %>
+        <label class="tab" id="two-tab" for="two"
+          >Outgoing Guardian Requests</label
+        >
       </div>
       <div class="panels">
         <div class="panel" id="one-panel">
@@ -21,11 +31,4 @@
       </div>
     </div>
   </div>
-
-  <% @incoming_requests.each do |request| %>
-    <br>
-    <%= request.message %>
-    <br>
-    <%= request.status %>
-    <br>
-    <% end %>
+</div>
