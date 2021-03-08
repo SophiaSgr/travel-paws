@@ -1,5 +1,31 @@
+<div class="container-profile">
+  <div>
+    <h1 class="dash-h lato bold">Your Dashboard</h1>
+    <p>Placement Avatar</p>
+  </div>
+
+  <div>
+    <p>Placement Bio User</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="format lato">
-  <h1 class="dash-h lato bold">Your Dashboard</h1>
+
   <div class="div-tabs">
     <div class="warpper">
       <input class="radio" id="one" name="group" type="radio" checked />
@@ -9,14 +35,14 @@
 
         <div class="position-tabs">
           <% if current_user.is_shelter_owner? %>
-           <label class="tab" id="one-tab" for="one"
-            >My Shelters</label
+          <label class="tab" id="one-tab" for="one"
+            >Outgoing Requests</label
           >
           <label class="tab" id="two-tab" for="two"
             >Requests for your Shelter</label
           >
-          <label class="tab" id="one-tab" for="one"
-            >Outgoing Requests</label
+           <label class="tab" id="three-tab" for="three"
+            >My Shelters</label
           >
             <% else %>
           <label class="tab" id="one-tab" for="one"
@@ -28,13 +54,16 @@
 
 
 
+
         <div class="panels">
+
           <div class="panel" id="one-panel">
             <div class="panel-title">Become a Guardian</div>
             <div>
               <% @outgoing_requests.each do |request| %>
               <h6>Why I want to become a Guardian:</h6>
                 <%= request.message %>
+                <br>
                 <h6>Request Status</h6>
                   <%= request.status %>
               <% end %>
@@ -57,7 +86,16 @@
                 <%= link_to "Decline", decline_path(r), method: :patch, controller: "requests_controller", class: "sec-btn-status" %>
                 <% end %>
               <% end %>
-            <% end %></p>
+            <% end %>
+
+             <div class="panel" id="three-panel">
+            <div class="panel-title">Your Shelters</div>
+            <br>
+            <% @shelters.each do |shelter| %>
+            <ul>
+              <li><%= shelter.name %></li>
+            </ul>
+            <% end %>
         </div>
       </div>
     </div>
