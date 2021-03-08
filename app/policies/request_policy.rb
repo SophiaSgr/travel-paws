@@ -13,7 +13,7 @@ class RequestPolicy < ApplicationPolicy
     end
 
     def show?
-     true
+      record.user == user || record.animal.shelter.user == user
     end
 
     def accept?
