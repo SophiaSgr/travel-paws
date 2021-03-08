@@ -1,37 +1,40 @@
-<div class="show">
-  <div class="card-product">
-    <div id="card-img">
-      <% if @animal.photos.attached? %>
-        <% @animal.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, height: 450, width: 450, crop: :fill %>
+<div class="container">
+  <div class="show">
+    <div class="card-product mt-4">
+      <div id="card-img">
+        <% if @animal.photos.attached? %>
+          <% @animal.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, height: 600, width: 600, crop: :fill %>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
 
-    <div class="card-product-infos">
-        <h1 class="headers-font lato bold"> <strong> <%= @animal.name %> </strong> </h1>
-        <br>
-        <ul class="lato normal">
+      <div class="card-product-infos">
+          <h1 class="headers-font lato bold"> <strong> <%= @animal.name %> </strong> </h1>
+          <br>
+          <ul class="lato normal">
 
-          <p> <em>Destination:</em> <%= @animal.dropoff %> </p>
-          <p> <em>Weight:</em> <%= @animal.weight %> </p>
-          <p> <em>Size:</em> <%= @animal.size %> kg </p>
-          <p> <em>Race:</em> <%= @animal.race %> </p>
-          <p> <em>Medical information:</em> <%= @animal.medical_information %> </p>
-        </ul>
-        <div class="card-product-description">
-          <p> <%= @animal.description %> </p>
-        </div>
+            <p> <em>Destination:</em> <%= @animal.dropoff %> </p>
+            <p> <em>Weight:</em> <%= @animal.weight %> kg </p>
+            <p> <em>Size:</em> <%= @animal.size %> </p>
+            <p> <em>Race:</em> <%= @animal.race %> </p>
+            <p> <em>Medical information:</em> <%= @animal.medical_information %> </p>
+          </ul>
+          <div class="card-product-description"> <br>
+            <p> <%= @animal.description %> </p>
+          </div>
+      </div>
     </div>
   </div>
-</div>
-<div class="container">
-  <%= link_to 'BACK', shelters_path, class: 'sec-btn'%>
-</div>
-
 
  <%= simple_form_for [@animal, @request] do |f| %>
     <%= f.input :message %>
     <%= f.input :passport %>
     <%= f.submit "Become my Guardian", class: " center-btn prime-btn justify-content-center" %>
  <% end %>
+</div>
+
+  <div class="container ml-4">
+    <%= link_to 'BACK', shelters_path, class: 'sec-btn'%>
+  </div>
+
