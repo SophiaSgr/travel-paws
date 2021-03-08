@@ -1,13 +1,9 @@
 class RequestsController < ApplicationController
 
-  def new
-    @request = policy_scope(Request)
-  end
 
   def create
     @animal = Animal.find(params[:animal_id])
     @request = Request.new(request_params)
-    authorize @request
     @request.user = current_user
     @request.animal = @animal
     if @request.save
@@ -15,24 +11,29 @@ class RequestsController < ApplicationController
     else
       render "animals/show"
     end
+    authorize @request
   end
 
   def accept
     @request = Request.find(params[:id])
-    @request.accept!
-    redirect_to dashboard_path
+    @request.status = "accept"
+    @request.save
+    redirect_to dashboard_index_path, notice: "Request Accepted"
     authorize @request
   end
 
   def decline
     @request = Request.find(params[:id])
-    @request.decline!
+    @request.status = "decline"
+    if @request.save
+    redirect_to dashboard_index_path, notice: "Request Decline"
+    end
     authorize @request
   end
 
   private
 
   def request_params
-    params.require(:request).permit(:message)
+    params.require(:request).permit(:message, :passport)
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_04_143949) do
+ActiveRecord::Schema.define(version: 2021_03_08_094505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,13 +52,29 @@ ActiveRecord::Schema.define(version: 2021_03_04_143949) do
     t.index ["shelter_id"], name: "index_animals_on_shelter_id"
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "requests", force: :cascade do |t|
     t.bigint "animal_id", null: false
     t.bigint "user_id", null: false
     t.boolean "contract_signed"
     t.text "message"
     t.string "transportation_type"
-    t.integer "status", default: 0
+    t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["animal_id"], name: "index_requests_on_animal_id"
@@ -96,6 +112,8 @@ ActiveRecord::Schema.define(version: 2021_03_04_143949) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "animals", "shelters"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "requests", "animals"
   add_foreign_key "requests", "users"
   add_foreign_key "shelters", "users"
