@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :animals, through: :shelters
   has_many :requests
   has_many :incoming_requests, through: :animals, source: :requests
-
+  has_one_attached :avatar
   def is_shelter_owner?
     self.shelters.any? ? true : false
   end
