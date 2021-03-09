@@ -1,6 +1,7 @@
 // Specific CSS for your home-page
 .hero{
  color: #fff;
+ height: calc(100vh-56px);
 }
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400|Playfair+Display:400,700,400italic|Libre+Baskerville:400,700,400italic|Muli:300,400|Open+Sans:400,300,700|Oswald:400,700|Raleway:400,100,300,700|Montserrat:400,700|Merriweather:400,300,300italic,400italic,700|Bree+Serif|Vollkorn:400italic,400,700|Abril+Fatface|Cardo:400,400italic);
 
@@ -12,7 +13,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1{
-  padding-bottom: 200px;
+
 }
 
 
@@ -61,12 +62,17 @@ p{
 .ls-xlarge{
   letter-spacing: 10px;
   line-height: 56px;
+  padding-bottom: 80px;
 }
 .uppercase{text-transform: uppercase;}
 .text-left{text-align: left;}
 .line-height-small{line-height: 1.2}
 .line-height-medium{line-height: 1.45}
 .line-height-large{line-height: 1.65}
+
+.position-second{
+  margin-top: 10px;
+}
 
 section{
   height: 600px;
@@ -79,7 +85,7 @@ section{
   position: relative;
   z-index: 10;
   transform: translateY(-50%);
-  top:50%;
+  top:40%;
   text-align: center;
 }
 .wrapper.large-wrap{max-width: 100%;}
