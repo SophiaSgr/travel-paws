@@ -1,6 +1,11 @@
-<div class="container">
+<div class="container ml-1">
+  <%= link_to 'BACK', shelters_path, class: 'back-sec-btn'%>
+</div>
+
+
+<div class="container-fluid d-flex mb-5">
   <div class="show">
-    <div class="card-product mt-4 mb">
+    <div class="card-product">
       <div id="card-img">
         <% if @animal.photos.attached? %>
           <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -25,34 +30,49 @@
         <% end %>
       </div>
 
-      <div class="card-product-infos">
-          <h1 class="headers-font lato bold"> <strong> <%= @animal.name %> </strong> </h1>
-          <br>
-          <ul class="lato normal">
+      <div class="card-product-infos d-flex flex-column justify-content-between h-100 py-5">
+        <h1 class="headers-font lato bold"> <strong> <%= @animal.name %> </strong> </h1>
+        <div class="lato normal">
+          <div class="container">
+            <div class="row">
+              <div class="col-4">
+                <div class="row my-3">Destination:</div>
+                <div class="row my-3">Weight (kg):</div>
+                <div class="row my-3">Size:</div>
+                <div class="row my-3">Race:</div>
+                <div class="row my-3">Medical information:</div>
+              </div>
 
-            <p> <em>Destination:</em> <%= @animal.dropoff %> </p>
-            <p> <em>Weight:</em> <%= @animal.weight %> kg </p>
-            <p> <em>Size:</em> <%= @animal.size %> </p>
-            <p> <em>Race:</em> <%= @animal.race %> </p>
-            <p> <em>Medical information:</em> <%= @animal.medical_information %> </p>
-          </ul>
-          <div class="card-product-description"> <br>
-            <p> <%= @animal.description %> </p>
+              <div class="col-8">
+                <div class="row my-3"><%= @animal.dropoff %></div>
+                <div class="row my-3"><%= @animal.weight %></div>
+                <div class="row my-3"><%= @animal.size %></div>
+                <div class="row my-3"><%= @animal.race %></div>
+                <div class="row my-3"><%= @animal.medical_information %></div>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <div class="card-product-description">
+          <h5>About <%= @animal.name %> </h5>
+          <p> <em><%= @animal.description %> </em> </p>
+        </div>
       </div>
     </div>
   </div>
 
-<h4 class="mt-3"><strong>Get in touch with the shelter:</strong></h4>
- <%= simple_form_for [@animal, @request] do |f| %>
-    <%= f.input :message %>
-    <%= f.input :passport, as: :file %>
-    <%= f.submit "Become my Guardian", class: " center-btn prime-btn justify-content-center" %>
-  <% end %>
-</div>
+
+  <div class="shelter-form">
+    <div class="lato normal">
+      <h5><strong>Get in touch with the shelter:</strong></h5>
+      <%= simple_form_for [@animal, @request] do |f| %>
+        <%= f.input :message, input_html: {rows: 8} %>
+        <%= f.input :passport, as: :file %>
+        <%= f.submit "Become my Guardian", class: " center-btn prime-btn justify-content-center" %>
+      <% end %>
+    </div>
+  </div>
 
 
-<div class="container ml-4">
-    <%= link_to 'Back', shelters_path, class: 'back-sec-btn'%>
-</div>
 
