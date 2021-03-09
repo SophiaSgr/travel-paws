@@ -1,31 +1,34 @@
-<div class="sample-header height">
-  <div class="sample-header-section">
-    <h1 class="lato bold">Shelters in and around your destination</h1>
-  </div>
-</div>
+<div class="container">
+      <%= form_tag shelters_path, method: :get, class: "search-form" do %> <%=
+      text_field_tag :query, params[:query], class: "form-control", placeholder:
+      "Where are you going?" %> <%= submit_tag "SEARCH SHELTERS", class:
+      "prime-btn-landing" %> <% end %>
+    </div>
 
-<div class="d-flex">
+<div class="d-flex" style="margin-left: 20px;">
   <div class="container h-100" style="margin-bottom: 60px">
     <div class="row align-middle">
       <% @shelters.each do |shelter| %>
         <div class="col-md-6 col-lg-6 column">
+        <%= link_to shelter_path(shelter), class: "card-link" do %> 
           <div class="card">
             <div class="card-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path shelter.photo.key%>')">
               <div class="txt">
-                <h1 class="shelter-h1"><%= link_to shelter.name, shelter_path(shelter), class:"shelterh" %></h1>
+                <h1 class="shelter-h1"><%= shelter.name %></h1>
                 <p class="shelter-p"><%= shelter.address %></p>
               </div>
             </div>
           </div>
+          <% end %>
         </div>
       <% end %>
     </div>
   </div>
-  <div id="map"
-   style="width: 100%; height: 100vh;"
-   data-markers="<%= @markers.to_json %>"
-   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+    <div id="map"
+    style="width: 100%; height: 100vh; margin-top: 48px; margin-right: 20px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 </div>
 
 <div class="container justify-content-center align-middle">

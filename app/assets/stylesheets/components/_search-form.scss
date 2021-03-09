@@ -1,12 +1,14 @@
 .search-form{
   display: flex;
-  margin-top: 40px;
+  justify-content: center;
+
   .form-control{
     height: 48px;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
     transition: all 0.4s;
     text-align:center;
+    width: 550px;
 
   }
   .prime-btn-landing{

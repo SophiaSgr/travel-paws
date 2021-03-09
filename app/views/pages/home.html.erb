@@ -1,19 +1,27 @@
-<section class="hero">
+<section class="hero pt-0">
   <div class="container wrapper">
-    <div class="container align-items-center">
+    <div class="container align-items-start">
       <h1 class="gamma lato thin uppercase ls-xlarge">
         <span class="open-sans tera ls-xlarge bold"
           >Travel<i class="fas fa-paw fa-paw-nav"></i>Paws</span
-        ><br />connect with shelters<br />
+
+        ><br />
+        <div class="position-second">
+          connect with shelters<br />
         <span class="epsilon ls-medium">and help animals travel home</span>
       </h1>
-    </div>
-
-    <div class="container">
-      <%= form_tag shelters_path, method: :get, class: "search-form" do %> <%=
-      text_field_tag :query, params[:query], class: "form-control", placeholder:
-      "Where are you going?" %> <%= submit_tag "SEARCH SHELTERS", class:
-      "prime-btn-landing" %> <% end %>
+      <div class="container">
+        <%= form_tag shelters_path, method: :get, class: "search-form" do %> <%=
+        text_field_tag :query, params[:query], class: "form-control", placeholder:
+        "Where are you going?" %> <%= submit_tag "SEARCH SHELTERS", class:
+        "prime-btn-landing" %> <% end %>
+      </div>
+      </div>
     </div>
   </div>
 </section>
+
+
+
+
+
