@@ -25,9 +25,7 @@
         <div class="infocardContainer">
         <% if animal.photos.attached? %>
           <div id='main'>
-            <% animal.photos.each do |photo| %>
-              <%= cl_image_tag photo.key, id: 'card-image', class: "card-img-top"%>
-            <% end %>
+              <%= cl_image_tag animal.photos.first.key, id: 'card-image', class: "card-img-top"%>
           </div>
           <% end %>
           <div id="textbois">

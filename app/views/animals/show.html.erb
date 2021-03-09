@@ -3,9 +3,25 @@
     <div class="card-product mt-4 mb">
       <div id="card-img">
         <% if @animal.photos.attached? %>
-          <% @animal.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, height: 600, width: 600, crop: :fill %>
-          <% end %>
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <%   @animal.photos.each_with_index do |photo, index | %>
+                <div class="<%= index == 0 ? 'carousel-item active' : 'carousel-item' %>">
+                  <%= cl_image_tag photo.key, height: 600, width: 600, crop: :fill,  class: "d-block" %>
+                </div>
+                <% end %>
+              </div>
+
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
         <% end %>
       </div>
 
