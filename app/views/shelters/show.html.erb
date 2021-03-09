@@ -6,9 +6,9 @@
   <% end %>
   <div class="hero">
   <div class="container">
-    <h1 class="open-sans tera ls-xlarge bold"><%= @shelter.name %></h1>
+    <h1 class="open-sans lato ls-xlarge bold line-height-header"><%= @shelter.name %></h1>
     <h2 class="lato thin ls-xlarge"><%= @shelter.address %></h2>
-    <p class="epsilon normal ls-medium"><%= @shelter.description %></p>
+    <p class="epsilon normal ls-medium line-height-banner"><%= @shelter.description %></p>
     <% if current_user.id == @shelter.user_id %>
       <%= link_to "+ Add Animal", new_shelter_animal_path(@shelter), id: "plus-btn" %>
     <% end %>
