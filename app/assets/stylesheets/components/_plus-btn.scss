@@ -3,24 +3,24 @@
     border: 1px solid #000000;
     font-size: 18px;
     background-color: white;
-    color: black;
+    color: #26272b;
     padding: 12px 20px;
     border-radius: 50px;
     text-transform: uppercase;
     cursor: pointer;
     display: inline-block;
-    
-    
+
+
     &:hover {
-        
+
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
         color: black;
         transform: translateY(-2px);
         border: 1px solid white;
         text-decoration: none;
-        background-color: black;
+        background-color: #26272b;
         color: white;
-        
+
     }
 
 }
