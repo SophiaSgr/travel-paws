@@ -84,6 +84,8 @@ h2{
   border-radius:3px;
   overflow:hidden;
   padding:20px;
+  margin-right: 56px;
+
 }
 .panel{
   display:none;
@@ -119,10 +121,10 @@ h2{
 }
 
 .tabs{
-    position: absolute;
-    left: 0px;
     top: -43px;
     z-index: 0;
+    margin-right: 56px;
+    margin-top: 58px;
 }
 
 .flex-div-tabs{
