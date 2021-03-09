@@ -48,7 +48,7 @@
           <% end %>
         </div>
        </div>
-      <div class="panels">
+      <div class="panels lato">
         <div class="panel" id="one-panel">
           <div class="panel-title">Become a Guardian</div>
           <div>
@@ -61,7 +61,7 @@
                   <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
                 </div>
 
-                <div class="notification-actions">
+                <div class="notification-actions lato">
                   <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
                   <a href="#">Delete <i class="far fa-trash-alt"></i></a>
                 </div>
@@ -76,8 +76,8 @@
             <% end %>
           </div>
         </div>
-        <div class="panel" id="two-panel">
-          <div class="panel-title">Your Requests</div>
+        <div class="panel lato" id="two-panel">
+          <div class="panel-title lato">Your Requests</div>
           <p><% if current_user.is_shelter_owner? %></p>
           <p>
             <% @incoming_requests.each do |r| %>
@@ -96,9 +96,9 @@
             <% end %>
           <% end %>
         </div>
-        <div class="panel" id="three-panel">
+        <div class="panel lato" id="three-panel">
           <p><% if current_user.is_shelter_owner? %></p>
-          <div class="panel-title">Your Shelters</div>
+          <div class="panel-title lato">Your Shelters</div>
           <br>
           <% @shelters.each do |shelter| %>
           <ul class="color-list-items">
