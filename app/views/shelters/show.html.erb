@@ -1,4 +1,5 @@
 
+
 <% if @shelter.photo.attached? %>
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @shelter.photo.key%>')">
   <% else %>
@@ -17,6 +18,11 @@
 
   </div>
 </div>
+
+
+<div class="container">
+    <%= link_to "back",  shelters_path, class: 'back-sec-btn ml-1'%>
+  </div>
 
 <div class="container">
     <div class='row'>
@@ -40,7 +46,5 @@
       <% end %>
     </div>
   </div>
-  <div class="container">
-    <%= link_to "back",  shelters_path, class: 'back-sec-btn'%>
-  </div>
+
 
