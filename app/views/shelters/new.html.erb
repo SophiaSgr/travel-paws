@@ -1,3 +1,7 @@
+<div class="container">
+<%= link_to "Back", shelters_path, class: 'back-sec-btn' %>
+</div>
+
 <div class="container ahmo">
   <div class="row justify-content-center">
     <div class="col-xs-12 col-lg-8 col-md-6">
@@ -7,15 +11,15 @@
             <%= f.input :name %>
             <%= f.input :address %>
             <%= f.input :description %>
-            <%= f.input :photo, as: :file %>
+            <label class="sec-btn sec-btn-file">Upload picture
+            <span style="display:none;">
+            <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "hidden" %>
+            </span>
+            </label><br><br>
             <%= f.submit class: 'prime-btn'%>
           <% end %>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-<div class="container">
-<%= link_to "Back", shelters_path, class: 'back-sec-btn' %>
 </div>
