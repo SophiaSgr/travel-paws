@@ -6,8 +6,8 @@
           <%= simple_form_for [@shelter, @animal] do |f| %>
             <%= f.input :name %>
             <%= f.input :animal_type %>
-            <%= f.input :weight (kg)%>
-            <%= f.input :size (cm)%>
+            <%= f.input :weight %>
+            <%= f.input :size %>
             <%= f.input :age %>
             <%= f.input :medical_information %>
             <%= f.input :race %>
@@ -22,5 +22,5 @@
   </div>
 </div>
 <div class="container">
-<%= link_to "BACK", shelter_path(@shelter), class: "sec-btn" %>
+<%= link_to "Back", shelter_path(@shelter), class: "back-sec-btn" %>
 </div>
