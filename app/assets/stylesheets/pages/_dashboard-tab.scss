@@ -47,7 +47,7 @@ body{
   font-family: 'Arimo', sans-serif;
 }
 h2{
-  color:#000;
+  color:#26272b;
   font-size:2em;
 }
 .div-tabs{
@@ -70,7 +70,7 @@ h2{
   cursor: pointer;
   padding:10px 20px;
   margin:0px 2px;
-  background:#000;
+  background:#26272b;
   display:inline-block;
   color:#fff;
   border-radius:3px 3px 0px 0px;
@@ -99,7 +99,8 @@ h2{
 }
 .panel-title{
   font-size:1.5em;
-  font-weight:bold
+  font-weight:bold;
+  color: #26272b;
 }
 .radio{
   display:none;
@@ -113,8 +114,8 @@ h2{
 #two:checked ~ .tabs #two-tab,
 #three:checked ~ .tabs #three-tab{
   background:#fffffff6;
-  color:#000;
-  border-top: 3px solid #000;
+  color:#26272b;
+  border-top: 3px solid #26272b;
 }
 
 .tabs{
@@ -147,8 +148,6 @@ h2{
   margin-left: 15px;
 }
 
-// .tab-boxshadow-right{
-//   -webkit-box-shadow: 0 8px 6px -6px black;
-//      -moz-box-shadow: 0 8px 6px -6px black;
-//           box-shadow: 0 8px 6px -6px black;
-// }
+.color-list-items{
+  color:#26272b;
+}
