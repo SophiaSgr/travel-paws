@@ -1,12 +1,18 @@
+
 <div class="container-profile">
   <h1 class="lato bold profile-header-style">Welcome to your Dashboard, <%= current_user.first_name %></h1>
   <div class="container-profile-user d-flex justify-content-between">
     <div class="title-placement" >
+<div class="container-profile d-flex align-items-center">
+  <div>
+    <h1 class="dash-h lato bold title-placement">Your Dashboard</h1>
+    <p>
+
       <% if current_user.avatar.attached? %>
         <%= cl_image_tag current_user.avatar.key, class:
       "avatar-profile-dashboard" %>
       <% else %>
-        <%= cl_image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-profile-dashboard"%>
+        <%= image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-profile-dashboard"%>
       <% end %>
       <div class="position-user-name">
         <div class="position-user-name">
@@ -14,11 +20,28 @@
           <p><%= current_user.first_name%></p>
           <p><%= current_user.last_name%></p>
         </div>
+
       </div>
         <p><%= current_user.bio%></p>
     </div>
     <div class="format lato">
+       </div>
+      <div class="panels lato">
+        <div class="panel" id="one-panel">
+          <div class="panel-title">Become a Guardian</div>
+          <div>
+            <% @outgoing_requests.each do |request| %>
+            <div class="notification">
+              <% if current_user.avatar.attached?  %>
+                <%= cl_image_tag current_user.avatar.key, class: "avatar-large" %>
+              <% else %>
+                <%= image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-profile-dashboard"%>
+              <% end %>
+                <div class="notification-content">
+                  <p><small><%= request.created_at %></small></p>
 
+                  <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
+                </div>
       <div class="div-tabs">
         <div class="wrapper-tabs">
           <input class="radio" id="one" name="group" type="radio" checked />
