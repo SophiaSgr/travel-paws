@@ -11,17 +11,19 @@ h1,h2,h3,h4,h5,h6 {
   position: relative;
 }
 
-h1{
-  padding-bottom: 200px;
+
+.hero {
+  h1{
+    padding-bottom: 200px;
+  }
+  p{
+    margin-top: 4rem;
+    font-size: 0.9rem;
+    line-height: 1;
+  }
 }
 
 
-
-p{
-  margin-top: 4rem;
-  font-size: 0.9rem;
-  line-height: 1
-}
 .tera {
   font-size: 5.5rem; /* 117 / 18 = 6.5 */
   margin-bottom: 0.25385rem;
