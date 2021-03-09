@@ -44,29 +44,31 @@ $gr-3:linear-gradient(170deg, #C86DD7 0%, #3023AE 100%);
   padding: 0;
   border: none;
   border-radius: 0;
-  color:rgba(0,0,0,1);
+  color:rgb(255, 255, 255);
   letter-spacing: .05rem;
   font-family: 'Oswald', sans-serif;
   box-shadow: 0 0 21px rgba(0,0,0,.27);
   .txt{
     z-index: 1;
+    padding-left: 16px;
     h1{
-      font-size: 20px;
+      font-size: 24px;
       font-weight: 300;
       text-transform: uppercase;
-      margin-top: 150px;
+      margin-top: 160px;
+    
     }
     .shelterh{
-      font-size:20px;
+      font-size: 20px;
       font-weight: 300;
       text-transform: uppercase;
     }
     p{
-      font-size:15px;
+      font-size: 15px;
       font-family: 'Open Sans', sans-serif;
       letter-spacing: 0rem;
-      margin-top:33px;
-      opacity:0;
+      margin-top: 8px;
+      opacity: 0;
       color:rgba(255,255,255,1);
     }
   }
