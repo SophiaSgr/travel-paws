@@ -74,7 +74,6 @@ h2{
   display:inline-block;
   color:#fff;
   border-radius:3px 3px 0px 0px;
-  box-shadow: 0 0.5rem 0.8rem #00000080;
 }
 .panels{
   background:#fffffff6;
@@ -145,4 +144,11 @@ h2{
 .title-placement{
   text-align: center;
   padding-top: 20px;
+  margin-left: 15px;
 }
+
+// .tab-boxshadow-right{
+//   -webkit-box-shadow: 0 8px 6px -6px black;
+//      -moz-box-shadow: 0 8px 6px -6px black;
+//           box-shadow: 0 8px 6px -6px black;
+// }

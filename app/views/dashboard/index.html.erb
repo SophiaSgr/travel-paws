@@ -1,24 +1,20 @@
-<div class="container-profile">
+<div class="container-profile d-flex align-items-center">
   <div>
     <h1 class="dash-h lato bold title-placement">Your Dashboard</h1>
-      <p>Placement Avatar</p>
+    <p>
+      <%= cl_image_tag current_user.avatar.key, class:
+      "avatar-profile-dashboard" %>
+    </p>
   </div>
-
+  <div class="position-user-name">
+    <h6></h6>
+    <p><%= current_user.first_name%></p>
+    <p><%= current_user.last_name%></p>
+  </div>
   <div>
-    <p>Placement Bio User</p>
+    <p><%= current_user.bio%></p>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -36,17 +32,17 @@
 </div>
         <div class="position-tabs">
           <% if current_user.is_shelter_owner? %>
-          <label class="tab" id="one-tab" for="one"
+          <label class="tab tab-boxshadow-right" id="one-tab" for="one"
             >Outgoing Requests</label
           >
-          <label class="tab" id="two-tab" for="two"
+          <label class="tab tab-boxshadow-right" id="two-tab" for="two"
             >Incoming Shelter</label
           >
-           <label class="tab" id="three-tab" for="three"
+           <label class="tab tab-boxshadow-right" id="three-tab" for="three"
             >My Shelters</label
           >
             <% else %>
-          <label class="tab" id="one-tab" for="one"
+          <label class="tab tab-boxshadow-right" id="one-tab" for="one"
             >Outgoing Requests</label
           >
           <% end %>
