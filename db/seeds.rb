@@ -743,8 +743,3 @@ adonis .save
 puts "CREATED #{Animal.count} FURRYS"
 
 
-request_savannah = Request.create!{
-  message: "Hello, my name is Savannah and I am also a shelter owner. I am flying back to Berlin on April 16th and could take Claude with me then!",
-  user: savannah,
-  animal: claude
-}
