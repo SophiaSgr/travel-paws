@@ -66,7 +66,7 @@ alty = User.create!(
   email:"alty@gmail.de",
   first_name:"Alty",
   last_name:"Altynai",
-  username:"123456",
+  username:"AltylovesCaaaaats",
   password: "123456"
 )
 file = URI.open('https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1949&q=80')
@@ -77,7 +77,7 @@ sophia = User.create!(
   email: "sophia@gmail.de",
   first_name: "Sophia",
   last_name: "Sagerson",
-  username: "123456",
+  username: "Poodlegirl115",
   password: "123456"
 )
 file = URI.open('https://images.unsplash.com/photo-1525879000488-bff3b1c387cf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
@@ -88,7 +88,7 @@ ahmed = User.create!(
   email: "ahmed@gmail.de",
   first_name: "Ahmed",
   last_name: "Frontenderson",
-  username: "123456",
+  username: "FrontendMan",
   password: "123456"
 )
 file = URI.open('https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80')
@@ -99,7 +99,7 @@ andy = User.create!(
   email: "andy@gmail.de",
   first_name: "Andy",
   last_name: "Andy",
-  username: "123456",
+  username: "Andyyy",
   password: "123456"
 )
 file = URI.open('https://images.unsplash.com/photo-1572965733194-784e4b4efa45?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
