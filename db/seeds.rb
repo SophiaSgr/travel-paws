@@ -20,7 +20,12 @@ jimmy = User.create!(
   mobile_number: "0178 2689374",
   first_name: "Jimmy",
   last_name: "Blue"
+
 )
+file = URI.open('https://cdn.fastly.picmonkey.com/contentful/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=800&q=70')
+jimmy.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+jimmy.save
+
 
 william = User.create!(
   email:"william@gmail.de",
@@ -30,6 +35,9 @@ william = User.create!(
   password: "123456",
   mobile_number: "0160 27452875"
 )
+file = URI.open('https://cultivatedculture.com/wp-content/uploads/2019/12/LinkedIn-Profile-Picture-Example-Tynan-Allan.jpeg')
+william.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+william.save
 
 bill = User.create!(
   email:"bilbo@gmail.de",
@@ -38,6 +46,9 @@ bill = User.create!(
   username:"billylovesdogs",
   password: "123456"
 )
+file = URI.open('https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
+bill.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+bill.save
 
 savannah = User.create!(
   email: "savannah@gmail.de",
@@ -47,28 +58,43 @@ savannah = User.create!(
   password: "123456",
   mobile_number: "0175 2896423"
 )
+file = URI.open('https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
+savannah.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+savannah.save
 
 alty = User.create!(
-  email:"Alty@gmail.de",
+  email:"alty@gmail.de",
   first_name:"Alty",
-  last_name:"Alty",
+  last_name:"Altynai",
   username:"123456",
   password: "123456"
 )
-benny = User.create!(
-  email: "benny@gmail.de",
-  first_name: "Benny",
-  last_name: "Benny",
+file = URI.open('https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1949&q=80')
+alty.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+alty.save
+
+sophia = User.create!(
+  email: "sophia@gmail.de",
+  first_name: "Sophia",
+  last_name: "Sagerson",
   username: "123456",
   password: "123456"
 )
-kiki = User.create!(
-  email: "kiki@gmail.de",
-  first_name: "Kiki",
-  last_name: "Kiki",
+file = URI.open('https://images.unsplash.com/photo-1525879000488-bff3b1c387cf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
+sophia.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+sophia.save
+
+ahmed = User.create!(
+  email: "ahmed@gmail.de",
+  first_name: "Ahmed",
+  last_name: "Frontenderson",
   username: "123456",
   password: "123456"
 )
+file = URI.open('https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80')
+ahmed.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+ahmed.save
+
 andy = User.create!(
   email: "andy@gmail.de",
   first_name: "Andy",
@@ -76,6 +102,10 @@ andy = User.create!(
   username: "123456",
   password: "123456"
 )
+file = URI.open('https://images.unsplash.com/photo-1572965733194-784e4b4efa45?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
+andy.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+andy.save
+
 
 puts 'CREATED ANIMAL FRIENDS'
 # -----------------------------------------------------------new seeds shelters
@@ -88,7 +118,7 @@ hillvalleyshelter = Shelter.new(
 file = URI.open('https://www.mercurynews.com/wp-content/uploads/2017/10/sjm-l-shelter-1101-22.jpg?w=620')
 hillvalleyshelter.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 hillvalleyshelter.save
-hillvalleyshelter.save
+
 
 grevenashelter = Shelter.new(
   name: "Grevena Shelter",
@@ -99,7 +129,7 @@ grevenashelter = Shelter.new(
 file = URI.open('https://www.aspcapro.org/sites/default/files/styles/image_component/public/resource/card/image/FIR_H7N2Cats_01_25_17_AKE_004.jpg?itok=2pY7VvgD')
 grevenashelter.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 grevenashelter.save
-grevenashelter.save
+
 
 florinahome = Shelter.new(
   name: "Florina Home",
@@ -110,7 +140,7 @@ florinahome = Shelter.new(
 file = URI.open('https://www.stonnington.vic.gov.au/files/assets/public/services/stonnington-animal-pound-and-shelter.jpg?dimension=pageimagefullwidth&w=1140')
 florinahome.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 florinahome.save
-florinahome.save
+
 
 dogsofveria = Shelter.new(
   name: "Dogs of Veria",
@@ -121,7 +151,7 @@ dogsofveria = Shelter.new(
 file = URI.open('https://images.foxtv.com/static.fox35orlando.com/www.fox35orlando.com/content/uploads/2020/11/764/432/GettyImages-1209292601.jpg?ve=1&tl=1')
 dogsofveria.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 dogsofveria.save
-dogsofveria.save
+
 
 
 catcitykilkis = Shelter.new(
@@ -133,7 +163,7 @@ catcitykilkis = Shelter.new(
 file = URI.open('https://cloudfront-us-east-1.images.arcpublishing.com/tronc/73A4NANAGNCLPO36UVJDXCS7TY.jpg')
 catcitykilkis.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 catcitykilkis.save
-catcitykilkis.save
+
 
 iloveanimals = Shelter.new(
   name: "I love Animals",
@@ -144,7 +174,7 @@ iloveanimals = Shelter.new(
 file = URI.open('https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2018/09/animal-rescue-349842.jpg?h=81635869&itok=oXs-nAXK')
 iloveanimals.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 iloveanimals.save
-iloveanimals.save
+
 
 pawpatrol = Shelter.new(
   name: "Paw-patrol",
@@ -155,7 +185,7 @@ pawpatrol = Shelter.new(
 file = URI.open('https://img.apmcdn.org/67a67513f9d731846f30f3ce76b6532721cc3411/widescreen/63823f-20190128-a-beautiful-world-animal-rescue-01.jpg')
 pawpatrol.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 pawpatrol.save
-pawpatrol.save
+
 
 patrasanimals = Shelter.new(
   name: "Patras Animals",
@@ -166,7 +196,7 @@ patrasanimals = Shelter.new(
 file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYdngFaV_RES3tZaqHW7DsewMGformheXiVw&usqp=CAU')
 patrasanimals.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 patrasanimals.save
-pawpatrol.save
+
 
 
 # ------------------------------------------------------- old seeds shelters
