@@ -55,15 +55,14 @@
                       <p><small>Dropoff</small></p>
                       <p><strong><%= request.animal.dropoff %></strong></p>
                       <br>
-                      <p><small>Your Request Message</small></p>
-                      <p><strong><%= request.message.first(50) %>  <%= "..." %></strong></p>
+                      <p><small>Your Message</small></p>
+                      <p><strong><%= request.message.first(50) %>  <%= "..." %> </strong></p>
                       <br>
                       <p><small>Request Status</small></p>
                       <p><strong><%= request.status %></strong></p>
                     </div>
-                    <div class="notification-actions lato">
-                      <!-- <p><#% link_to "Enter the Chat",  %></p> -->
-                      <% link_to "Enter the Chat", request_path(request), class: "back-sec-btn" %>
+                    <div class="lato">
+                      <%= link_to "Chat with Shelter", request_path(request), class: "back-sec-btn" %>
                     </div>
                   </div>
                 <% end %>
