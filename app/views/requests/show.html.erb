@@ -1,18 +1,42 @@
-<div class="container">
-  <h1> Your incoming messages </h1>
-  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-    <% @chatroom.messages.each do |message| %>
-      <div class="message-container" id="message-<%= message.id %>">
-        <i class="author">
-          <span><%= message.user.username %></span>
-          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-        </i>
-        <p><%= message.content %></p>
-      </div>
+<div class="container request-main mt-2 lato">
+
+  <div class="chat-title">
+    <% if current_user == @request.animal.shelter.user %>
+      <h4> Your chat with <%= @request.user.username %> </h4>
+    <% else  %>
+      <h4> Your chat with <%= @request.animal.shelter.user.username %> </h4>
+    <% end  %>
+  </div>
+
+  <div class="chat-messages">
+    <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+      <% @chatroom.messages.each do |message| %>
+
+        <% is_author = message.user == current_user ? 'is-author' : '' %>
+        <% is_author_avatar = message.user == current_user ? 'is-author-avatar' : '' %>
+
+
+        <div class="message-container <%= is_author %>" id="message-<%= message.id %>">
+          <i class="author">
+            <span><%= message.user.username %></span>
+              <% if current_user.avatar.attached? %>
+                <%= cl_image_tag current_user.avatar.key, class:
+              "avatar-profile-dashboard avatar-profile-dashboard-chat #{is_author_avatar}" %>
+              <% else %>
+                <%= cl_image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-profile-dashboard avatar-profile-dashboard-chat #{is_author_avatar}"%>
+              <% end %>
+            <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+          </i>
+          <p><%= message.content %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="message-input">
+    <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+      <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
     <% end %>
   </div>
 
-  <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-    <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-  <% end %>
 </div>

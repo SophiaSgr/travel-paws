@@ -1,0 +1,27 @@
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+.request-main{
+  display: flex;
+  flex-direction: column;
+}
+
+.is-author {
+  text-align: right;
+}
+
+.is-author-avatar {
+  float: right;
+}
+
+.chat-title {
+  text-align: center;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  min-height: calc(100vh-56px);
+}
