@@ -4,7 +4,6 @@ require "open-uri"# This file should contain all the record creation needed to s
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
 Animal.destroy_all
 Shelter.destroy_all
