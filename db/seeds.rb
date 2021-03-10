@@ -13,7 +13,7 @@ User.destroy_all
 
 
 
-jimmy = User.create!(
+jimmy = User.new(
   email: 'apple@gmail.com',
   password: 'apple1',
   username: 'jimmylovesanimals',
@@ -27,7 +27,7 @@ jimmy.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 jimmy.save
 
 
-william = User.create!(
+william = User.new(
   email:"william@gmail.de",
   first_name:"William",
   last_name:"King",
@@ -39,7 +39,7 @@ file = URI.open('https://cultivatedculture.com/wp-content/uploads/2019/12/Linked
 william.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 william.save
 
-bill = User.create!(
+bill = User.new(
   email:"bilbo@gmail.de",
   first_name:"Billy",
   last_name:"Frieske",
@@ -50,7 +50,7 @@ file = URI.open('https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ix
 bill.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 bill.save
 
-savannah = User.create!(
+savannah = User.new(
   email: "savannah@gmail.de",
   first_name: "Savannah",
   last_name: "Ochsenknecht",
@@ -62,7 +62,7 @@ file = URI.open('https://images.unsplash.com/photo-1607746882042-944635dfe10e?ix
 savannah.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 savannah.save
 
-alty = User.create!(
+alty = User.new(
   email:"alty@gmail.de",
   first_name:"Alty",
   last_name:"Altynai",
@@ -73,7 +73,7 @@ file = URI.open('https://images.unsplash.com/photo-1493666438817-866a91353ca9?ix
 alty.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 alty.save
 
-sophia = User.create!(
+sophia = User.new(
   email: "sophia@gmail.de",
   first_name: "Sophia",
   last_name: "Sagerson",
@@ -84,7 +84,7 @@ file = URI.open('https://images.unsplash.com/photo-1525879000488-bff3b1c387cf?ix
 sophia.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 sophia.save
 
-ahmed = User.create!(
+ahmed = User.new(
   email: "ahmed@gmail.de",
   first_name: "Ahmed",
   last_name: "Frontenderson",
@@ -95,7 +95,7 @@ file = URI.open('https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ix
 ahmed.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 ahmed.save
 
-andy = User.create!(
+andy = User.new(
   email: "andy@gmail.de",
   first_name: "Andy",
   last_name: "Andy",
