@@ -19,6 +19,8 @@ class RequestsController < ApplicationController
     @request.user = current_user
     @request.animal = @animal
     if @request.save
+      @chatroom = Chatroom.create(request: @request)
+      @message = Message.create(chatroom: @chatroom, user: current_user, content: @request.message)
       redirect_to dashboard_index_path
     else
       render "animals/show"
