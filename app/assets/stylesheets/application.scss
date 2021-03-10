@@ -21,3 +21,7 @@
 @import "dashboard/field-styling";
 @import "dashboard/user-bio";
 @import "components/back-sec-btn";
+
+.page-content {
+  min-height: calc(100vh - 56px);
+}
