@@ -142,15 +142,15 @@ florinahome.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/
 florinahome.save
 
 
-dogsofveria = Shelter.new(
-  name: "Dogs of Veria",
-  address: "Veria, Greece",
-  description: "We are a shelter that takes in any kind of stray animals in order to give them another shot at a peaceful life. Currently we have over 96 animals in our care and appreciate any help the we can get. Especially in terms of funding and transportation as we are a small, non-governmental establishment.",
-  user: savannah
-)
-file = URI.open('https://images.foxtv.com/static.fox35orlando.com/www.fox35orlando.com/content/uploads/2020/11/764/432/GettyImages-1209292601.jpg?ve=1&tl=1')
-dogsofveria.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
-dogsofveria.save
+# dogsofveria = Shelter.new(
+#   name: "Dogs of Veria",
+#   address: "Veria, Greece",
+#   description: "We are a shelter that takes in any kind of stray animals in order to give them another shot at a peaceful life. Currently we have over 96 animals in our care and appreciate any help the we can get. Especially in terms of funding and transportation as we are a small, non-governmental establishment.",
+#   user: savannah
+# )
+# file = URI.open('https://images.foxtv.com/static.fox35orlando.com/www.fox35orlando.com/content/uploads/2020/11/764/432/GettyImages-1209292601.jpg?ve=1&tl=1')
+# dogsofveria.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+# dogsofveria.save
 
 
 
