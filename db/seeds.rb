@@ -204,7 +204,7 @@ lifeforanimals = Shelter.new(
   name: "Life for Animals",
   address: "Crete, Greece",
   description: "We are a shelter that takes in any kind of stray animals in order to give them another shot at a peaceful life. Currently we have over 96 animals in our care and appreciate any help the we can get. Especially in terms of funding and transportation as we are a small, non-governmental establishment.",
-  user: bill
+  user: savannah
 )
 
 file = URI.open('https://cdn.sanity.io/images/0vv8moc6/dvm360/e28735abb3f1073399b64e4ee92b900ed556c357-5314x3543.jpg?auto=format')
