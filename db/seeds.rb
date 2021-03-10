@@ -49,18 +49,18 @@ file = URI.open('https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ix
 bill.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 bill.save
 
-savannah = User.new(
-  email: "savannah@gmail.de",
-  first_name: "Savannah",
-  last_name: "Ochsenknecht",
-  username: "savio",
+sophia = User.new(
+  email: "sophia@gmail.de",
+  first_name: "Sophia",
+  last_name: "Sagé",
+  username: "sagio",
   password: "123456",
   mobile_number: "0175 2896423",
-  bio: "Hi, my name is Savannah and I am the owner of the shelter 'Life for animals' in Crete, Greece. Alongside my own shelter I collaborate with many other shelters throughout Greece."
+  bio: "Hi, my name is Sophia and I am the owner of the shelter 'Life for animals' in Crete, Greece. Alongside my own shelter I collaborate with many other shelters throughout Greece."
 )
 file = URI.open('https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
-savannah.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
-savannah.save
+sophia.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+sophia.save
 
 alty = User.new(
   email:"alty@gmail.de",
@@ -73,16 +73,16 @@ file = URI.open('https://images.unsplash.com/photo-1493666438817-866a91353ca9?ix
 alty.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 alty.save
 
-sophia = User.new(
-  email: "sophia@gmail.de",
-  first_name: "Sophia",
+sofia = User.new(
+  email: "sofia@gmail.de",
+  first_name: "Sofia",
   last_name: "Sagerson",
   username: "Poodlegirl115",
   password: "123456"
 )
 file = URI.open('https://images.unsplash.com/photo-1525879000488-bff3b1c387cf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
-sophia.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
-sophia.save
+sofia.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+sofia.save
 
 ahmed = User.new(
   email: "ahmed@gmail.de",
@@ -113,7 +113,7 @@ hillvalleyshelter = Shelter.new(
   name: "Hill Valley Shelter",
   address: "Agrinio, Greece",
   description: "We are a shelter that takes in any kind of stray animals in order to give them another shot at a peaceful life. Currently we have over 96 animals in our care and appreciate any help the we can get. Especially in terms of funding and transportation as we are a small, non-governmental establishment.",
-  user: savannah
+  user: sofia
 )
 file = URI.open('https://www.mercurynews.com/wp-content/uploads/2017/10/sjm-l-shelter-1101-22.jpg?w=620')
 hillvalleyshelter.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
@@ -147,6 +147,7 @@ florinahome.save
 #   address: "Veria, Greece",
 #   description: "We are a shelter that takes in any kind of stray animals in order to give them another shot at a peaceful life. Currently we have over 96 animals in our care and appreciate any help the we can get. Especially in terms of funding and transportation as we are a small, non-governmental establishment.",
 #   user: savannah
+
 # )
 # file = URI.open('https://images.foxtv.com/static.fox35orlando.com/www.fox35orlando.com/content/uploads/2020/11/764/432/GettyImages-1209292601.jpg?ve=1&tl=1')
 # dogsofveria.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
@@ -158,7 +159,7 @@ catcitykilkis = Shelter.new(
   name: "Cat City Kilkis",
   address: "Kilkis, Greece",
   description: "We are a shelter that takes in any kind of stray animals in order to give them another shot at a peaceful life. Currently we have over 96 animals in our care and appreciate any help the we can get. Especially in terms of funding and transportation as we are a small, non-governmental establishment.",
-  user: savannah
+  user: sophia
 )
 file = URI.open('https://cloudfront-us-east-1.images.arcpublishing.com/tronc/73A4NANAGNCLPO36UVJDXCS7TY.jpg')
 catcitykilkis.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
@@ -191,7 +192,7 @@ patrasanimals = Shelter.new(
   name: "Patras Animals",
   address: "Patras, Greece",
   description: "We are a shelter that takes in any kind of stray animals in order to give them another shot at a peaceful life. Currently we have over 96 animals in our care and appreciate any help the we can get. Especially in terms of funding and transportation as we are a small, non-governmental establishment.",
-  user: savannah
+  user: sophia
 )
 file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYdngFaV_RES3tZaqHW7DsewMGformheXiVw&usqp=CAU')
 patrasanimals.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
@@ -204,7 +205,7 @@ lifeforanimals = Shelter.new(
   name: "Life for Animals",
   address: "Crete, Greece",
   description: "We are a shelter that takes in any kind of stray animals in order to give them another shot at a peaceful life. Currently we have over 96 animals in our care and appreciate any help the we can get. Especially in terms of funding and transportation as we are a small, non-governmental establishment.",
-  user: savannah
+  user: sophia
 )
 
 file = URI.open('https://cdn.sanity.io/images/0vv8moc6/dvm360/e28735abb3f1073399b64e4ee92b900ed556c357-5314x3543.jpg?auto=format')
@@ -215,7 +216,7 @@ furryfriends =  Shelter.new(
   name: "Furry Friends",
   address: "Lamia, Greece",
   description: "Our small shelter in Lisbon helps stray city animals find new, forever homes. We depend on private fundings and are a non-state funded shelter. Any help is valuable. Currently we have 55 animals in care.",
-  user: savannah
+  user: sophia
 )
 file = URI.open('https://www.onetz.de/sites/default/files/imagecache/ga-large/articlemedia/2020/09/01/3432d4b6-818f-4ef9-86c0-0064024babf8.jpg')
 furryfriends.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
