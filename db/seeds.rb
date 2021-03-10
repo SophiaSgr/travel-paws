@@ -55,7 +55,8 @@ savannah = User.new(
   last_name: "Ochsenknecht",
   username: "savio",
   password: "123456",
-  mobile_number: "0175 2896423"
+  mobile_number: "0175 2896423",
+  bio: "Hi, my name is Savannah and I am the owner of the shelter 'Life for animals' in Crete, Greece. Alongside my own shelter I collaborate with many other shelters throughout Greece."
 )
 file = URI.open('https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
 savannah.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
