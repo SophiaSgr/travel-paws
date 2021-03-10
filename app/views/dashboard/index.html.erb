@@ -63,7 +63,7 @@
                     </div>
                     <div class="notification-actions lato">
                       <!-- <p><#% link_to "Enter the Chat",  %></p> -->
-                      <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+                      <% link_to "Enter the Chat", request_path(request), class: "back-sec-btn" %>
                     </div>
                   </div>
                 <% end %>
@@ -80,15 +80,15 @@
                   <% end %>
                 <div class="styling-field">
                   <h6>Guardian Message:</h6>
-                  <p><%= ir.message %></p>
+                  <p><%= incoming_r.message %></p>
                 </div>
                 <div class="styling-field">
                   <h6>Status</h6>
-                  <p><%= ir.status %></p>
+                  <p><%= incoming_r.status %></p>
                 </div>
-                <% if ir.pending? %>
-                  <%= link_to "Accept", accept_path(r), method: :patch, controller: "requests_controller", class: "sec-btn-status" %>
-                  <%= link_to "Decline", decline_path(r), method: :patch, controller: "requests_controller", class: "sec-btn-status" %>
+                <% if incoming_r.pending? %>
+                  <%= link_to "Accept", accept_path(incoming_r), method: :patch, controller: "requests_controller", class: "sec-btn-status" %>
+                  <%= link_to "Decline", decline_path(incoming_r), method: :patch, controller: "requests_controller", class: "sec-btn-status" %>
                 <% end %>
               <% end %>
             <% end %>
@@ -103,6 +103,7 @@
                   <h6><strong>Shelter</strong></h6>
                   <li><%= shelter.name %></li>
                   <li><%= shelter.address %></li>
+                  <li><%= shelter.animals.all %></li>
                 </ul>
               <% end %>
             <% end %>
