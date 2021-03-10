@@ -53,7 +53,7 @@ sophia = User.new(
   email: "sophia@gmail.de",
   first_name: "Sophia",
   last_name: "Sagé",
-  username: "savio",
+  username: "sagio",
   password: "123456",
   mobile_number: "0175 2896423",
   bio: "Hi, my name is Sophia and I am the owner of the shelter 'Life for animals' in Crete, Greece. Alongside my own shelter I collaborate with many other shelters throughout Greece."
