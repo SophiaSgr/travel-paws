@@ -1,24 +1,21 @@
 <div class="container-profile">
   <h1 class="lato bold profile-header-style">Welcome to your Dashboard, <%= current_user.first_name %></h1>
   <div class="container-profile-user d-flex justify-content-between">
-    <div class="title-placement" >
-      <% if current_user.avatar.attached? %>
-        <%= cl_image_tag current_user.avatar.key, class:
-      "avatar-profile-dashboard" %>
-      <% else %>
-        <%= cl_image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-profile-dashboard"%>
-      <% end %>
-      <div class="position-user-name">
-        <div class="position-user-name">
-          <h6><strong> Your Profile Information</strong></h6>
-          <p><%= current_user.first_name%></p>
-          <p><%= current_user.last_name%></p>
-        </div>
+    <div class="user-info-card text-center p-5">
+      <div>
+        <% if current_user.avatar.attached? %>
+          <%= cl_image_tag current_user.avatar.key, class:
+        "avatar-round", height: 90, width: 90, crop: :fill %>
+        <% else %>
+          <%= cl_image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-round" %>
+        <% end %>
+        </div class="lato">
+            <h5 class="mt-3"><strong> Your Profile Information</strong></h5>
+            <p><%= current_user.first_name%></p>
+            <p><%= current_user.last_name%></p>
+          <p><%= current_user.bio%></p>
       </div>
-        <p><%= current_user.bio%></p>
-    </div>
-    <div class="format lato">
-
+  <div class="format lato">
       <div class="div-tabs">
         <div class="wrapper-tabs">
           <input class="radio" id="one" name="group" type="radio" checked />
