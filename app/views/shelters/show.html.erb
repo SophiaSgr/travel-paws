@@ -11,7 +11,7 @@
                 <%= @shelter.name %>
               </h1>
               <h2 class="lato thin ls-xlarge line-height-h2">
-                <%= @shelter.address %>
+                <i class="fas fa-map-marker"></i><%= @shelter.address %>
               </h2>
             </div>
           </div>
@@ -43,13 +43,13 @@
     </div>
   </div>
     <div class="gray-info-box">
+      <p class="epsilon normal ls-medium line-height-text">
+        <%= @shelter.description %>
+      </p>
       <img src="<%= cl_image_path current_user.avatar.key %>" class="card-animal-user avatar-large avatar-bordered" />
       <h3 class="epsilon normal ls-medium line-height-text">
         <%= @shelter.user.username %>
       </h3>
-      <p class="epsilon normal ls-medium line-height-text">
-        <%= @shelter.description %>
-      </p>
       <% if current_user == @shelter.user %>
         <%= link_to "+ Add Animal", new_shelter_animal_path(@shelter), id: "plus-btn" %>
       <% end %>

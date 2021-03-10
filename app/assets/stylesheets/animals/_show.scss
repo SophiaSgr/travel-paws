@@ -23,6 +23,10 @@
   flex-direction: column;
   position: sticky;
   top: 0px;
+  .shelter-address {
+    font-size: 12px;
+    font: $body-font;
+  }
 }
 
 .gray-info-box .card-animal-user {
