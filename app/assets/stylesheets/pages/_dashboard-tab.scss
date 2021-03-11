@@ -1,4 +1,11 @@
+.flex-item {
+  padding: 0px 16px;
+  height: 120px;
+}
 
+.flex-item:first-child {
+  font-size: 14px;
+}
 
 @import url('https://fonts.googleapis.com/css?family=Arimo:400,700&display=swap');
 body{
@@ -26,7 +33,7 @@ h2{
 .tab{
   cursor: pointer;
   padding:10px 20px;
-  margin:0px 2px;
+  margin:0px 2px 0px 0px;
   background:#26272b;
   display:inline-block;
   color:#fff;

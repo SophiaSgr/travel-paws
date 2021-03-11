@@ -44,24 +44,32 @@
                     <% else %>
                       <%= image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-profile-dashboard"%>
                     <% end %>
-                    <div class="notification-content">
-                      <p><small>Created At</small></p>
-                      <p><strong><%= request.created_at.strftime("%m/%d/%Y") %></strong></p>
-                      <br>
-                      <p><small>For</small></p>
-                      <p><strong><%= request.animal.name %></strong></p>
-                      <br>
-                      <p><small>Dropoff</small></p>
-                      <p><strong><%= request.animal.dropoff %></strong></p>
-                      <br>
-                      <p><small>Your Message</small></p>
-                      <p><strong><%= request.message.last %>  <%= "..." %> </strong></p>
-                      <br>
-                      <p><small>Request Status</small></p>
-                      <p><strong><%= request.status %></strong></p>
-                    </div>
-                    <div class="lato">
-                      <%= link_to "Chat with Shelter", request_path(request), class: "back-sec-btn" %>
+                    <div class="notification-content d-flex align-items-start">
+                      <div class="flex-item">
+                        <div>
+                          <p><small>Created At</small></p>
+                          <p><strong><%= request.created_at.strftime("%m/%d/%Y") %></strong></p>
+                        </div>
+                        <div>
+                          <p><small>For</small></p>
+                          <p><strong><%= request.animal.name %></strong></p>
+                        </div>
+                        <div>
+                          <p><small>Dropoff</small></p>
+                          <p><strong><%= request.animal.dropoff %></strong></p>
+                        </div>
+                      </div>
+                      <div class="flex-item flex-grow-1 d-flex flex-column justify-content-between">
+                        <div>
+                          <p><small>Your Message</small></p>
+                          <p><strong><%= request.chatroom.messages.last.content.truncate(30) %> </strong></p>
+                        </div>
+                          <%= link_to "Chat with Shelter", request_path(request), class: "chat-sec-btn" %>
+                      </div>
+                      <div class="flex-item">
+                        <p><small>Request Status</small></p>
+                        <p><strong><%= request.status %></strong></p>
+                      </div>
                     </div>
                   </div>
                 <% end %>
