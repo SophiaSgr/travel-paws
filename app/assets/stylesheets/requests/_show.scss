@@ -9,6 +9,12 @@
   flex-direction: column;
   background-color:white;
   border-radius:20px;
+
+}
+.container-main{
+  position:relative;
+  max-height: 80vh;
+  padding-bottom: 10px;
 }
 
 .is-author {
@@ -23,9 +29,9 @@
   text-align: center;
 }
 
-.chat-messages {
+#messages {
   flex-grow: 1;
-  min-height: calc(100vh-56px);
+  overflow-y: scroll;
 }
 
 .card-header:first-child {
