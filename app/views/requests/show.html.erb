@@ -1,4 +1,4 @@
-
+<div class="">
 <div class="container request-main mt-2 lato">
   <div class="card-header">
     <div class="chat-title">
@@ -10,6 +10,7 @@
     </div>
   </div>
 
+  <div class="chat-messages">
     <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
       <% @chatroom.messages.each do |message| %>
 
@@ -33,6 +34,7 @@
         </div>
       <% end %>
     </div>
+  </div>
 
   <div class="msb-reply">
   <div class="message-input">
@@ -42,4 +44,5 @@
   </div>
   </div>
 
+</div>
 </div>
