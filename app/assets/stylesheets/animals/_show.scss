@@ -65,6 +65,13 @@
   border-radius: 4px;
   font-family: $body-font;
   margin: 0px 24px 24px 0px;
+  min-height: 400px;
+  
+  .btn-down {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
 }
 
 .card-animal > img {
@@ -93,7 +100,6 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-
 }
 
 .min-height-60 {
@@ -112,6 +118,7 @@
 
 .card-product {
 
+  // margin-top: 50px;
   overflow: hidden;
   height: 600px;
   background: white;
@@ -178,3 +185,17 @@
   resize: none;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
+
+.button-fix {
+  display: grid;
+
+  .sec-btn {
+    width: 158px;
+  }
+
+  .center-btn {
+    width: 258px;
+  }
+}
+
+

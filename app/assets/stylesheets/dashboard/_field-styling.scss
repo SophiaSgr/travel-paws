@@ -1,12 +1,48 @@
 .styling-field{
-  border: 1px black;
+  border: 1px #26272b;
 }
 
 .container-profile{
   margin-bottom: 120px;
-  justify-content: flex-start;
+  width: 2000px;
+  text: center;
 }
 
 .list-items-shelter-tabs{
   list-style: none;
+}
+
+.shelter-link-styling{
+  text-decoration: none;
+  color: #26272b;
+
+  &:hover{
+    color: #26272b;
+  }
+}
+
+
+.guardian-message{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  height: 100%;
+  height: 120px;
+
+}
+.request-status{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 16px;
+  margin-right: 32px;
+
+}
+
+
+.status-button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

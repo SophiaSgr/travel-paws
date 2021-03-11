@@ -3,6 +3,11 @@
 <% else %>
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://source.unsplash.com/600x600/?dogs')">
 <% end %>
+
+  <div>
+    <%= link_to "back",  shelters_path, class: 'back-sec-btn'%>
+  </div>
+
     <div class="hero shelter-show-hero">
       <div class="container">
         <h1 class="open-sans lato ls-xlarge bold line-height-header"><%= @shelter.name %></h1>
@@ -30,7 +35,7 @@
                 <div class="w-100">
                   <div class="card-animal-dropoff text-right"><p>Dropoff <i class="fas fa-map-marker"></i><%= animal.dropoff %></p></div>
                   <h2><%= animal.name %></h2>
-                  <p class="min-height-60"><%= animal.medical_information %></p>
+                  <p><%= animal.medical_information[0..50]+"..." %></p>
                 <div class="detail-link">
                  <%= link_to 'MORE DETAILS', animal_path(animal), class: 'prime-btn' %>
                  </div>
@@ -42,11 +47,3 @@
       </div>
   </div>
 </div>
-
-
-
-
-  <div class="container">
-    <%= link_to "back",  shelters_path, class: 'back-sec-btn ml-1'%>
-  </div>
-

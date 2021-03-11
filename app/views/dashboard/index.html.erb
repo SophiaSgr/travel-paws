@@ -1,8 +1,8 @@
 <div class="container-profile">
-  <h1 class="lato light profile-header-style">Welcome to your Dashboard, <%= current_user.first_name %></h1>
   <div class="container-profile-user">
     <div class="user-info-card text-center p-4">
       <div>
+      <h1 class="lato light profile-header-style">Welcome to your Dashboard, <%= current_user.first_name %></h1>
         <% if current_user.avatar.attached? %>
           <%= cl_image_tag current_user.avatar.key, class:
         "avatar-round", height: 90, width: 90, crop: :fill %>
@@ -13,11 +13,10 @@
         </div class="lato">
             <h5 class="mt-3 lato light"><strong> Your Profile Information</strong></h5>
             <br>
-            <h5>Your Name</h5>
             <p><%= current_user.first_name%><%= current_user.last_name%></p>
-            <h5>Your Email</h5>
+            <br>
             <p><%= current_user.email %></p>
-            <h5>Your Bio</h5>
+            <br>
           <p><%= current_user.bio%></p>
       </div>
   <div class="format lato">
@@ -58,7 +57,7 @@
                     <p><strong><%= request.animal.dropoff %></strong></p>
                     <br>
                     <p><small>Your Message</small></p>
-                    <p><strong><%= request.message.first(50) %>  <%= "..." %> </strong></p>
+                    <p><strong><%= request.message.last %>  <%= "..." %> </strong></p>
                     <br>
                     <p><small>Request Status</small></p>
                     <p><strong><%= request.status %></strong></p>
@@ -79,15 +78,22 @@
                     <% else %>
                       <%= image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-profile-dashboard"%>
                     <% end %>
-                    <div class="notification-content">
-                      <p><small>Guardian Message:</small></p>
-                      <p><%= incoming_r.message %> <%= "..." %> <%= link_to "Chat with User", request_path(request), class: "back-sec-btn" %></p>
-                      <p><small>Request Status</small></p>
-                      <p><%= incoming_r.status %></p>
-                      <% if incoming_r.pending? %>
-                        <%= link_to "Accept", accept_path(incoming_r), method: :patch, controller: "requests_controller", class: "accept-btn" %>
-                        <%= link_to "Decline", decline_path(incoming_r), method: :patch, controller: "requests_controller", class: "decline-btn" %>
-                      <% end %>
+                    <div class="notification-content d-flex justify-content-between">
+                      <div class="guardian-message">
+                        <p><small>Guardian Message:</small></p>
+                        <p><%= incoming_r.chatroom.messages.last.content.truncate(30) %>  </p>
+                          <%= link_to "Chat with User", request_path(request), class: "chat-sec-btn" %>
+                      </div>
+                      <div class="request-status">
+                        <p><small>Request Status</small></p>
+                        <p><%= incoming_r.status %></p>
+                      </div>
+                        <div class="status-button">
+                          <% if incoming_r.pending? %>
+                            <%= link_to "Accept", accept_path(incoming_r), method: :patch, controller: "requests_controller", class: "accept-btn" %>
+                            <%= link_to "Decline", decline_path(incoming_r), method: :patch, controller: "requests_controller", class: "decline-btn" %>
+                          <% end %>
+                        </div>
                     </div>
                   </div>
                   <% end %>
@@ -107,11 +113,14 @@
                   <div class="notification-content">
                     <ul class="list-items-shelter-tabs">
                       <br>
-                      <h6><strong>Shelter</strong></h6>
-                      <li><%= shelter.name %></li>
+                      <h5><%= link_to shelter.name, shelters_path, class: "shelter-link-styling" %> <%= link_to "Shelter", shelters_path, class: "shelter-link-styling" %></h5>
                       <br>
-                      <h6><strong>Location</strong></h6>
-                      <li><%= shelter.address %></li>
+                      <div class="card-animal-dropoff text-left">
+                        <h6 ><strong>Location <i class="fas fa-map-marker"></i> <%= shelter.address %></strong></h6>
+                        <div class="text-right">
+                          <%= link_to "+ ADD ANIMAL", new_shelter_animal_path(shelter), id: "plus-btn-shelter" %>
+                        </div>
+                      </div>
                       <br>
                     </ul>
                   </div>
