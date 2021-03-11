@@ -1,12 +1,22 @@
 .styling-field{
-  border: 1px black;
+  border: 1px #26272b;
 }
 
 .container-profile{
   margin-bottom: 120px;
-  justify-content: flex-start;
+  width: 2000px;
+  text: center;
 }
 
 .list-items-shelter-tabs{
   list-style: none;
+}
+
+.shelter-link-styling{
+  text-decoration: none;
+  color: #26272b;
+
+  &:hover{
+    color: #26272b;
+  }
 }
