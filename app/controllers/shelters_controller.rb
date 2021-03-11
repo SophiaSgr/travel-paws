@@ -3,19 +3,20 @@ class SheltersController < ApplicationController
 
   def index
     @shelters = policy_scope(Shelter)
-
-    if params[:query].present?
-      @shelters = Shelter.near(params[:query], 800)
-    else
-      @shelters = Shelter.all
+    if params[:pickup].present?
+      @shelters = Shelter.near(params[:pickup], 800)
+    elsif params[:dropoff].present?
+      @shelters = @shelters.joins(:animals).where("animals.dropoff ILIKE ?", "%#{params[:dropoff]}%")
+    elsif params[:pickup].present? && params[:dropoff].present?
+      @shelters.joins(:animals).where("animals.dropoff ILIKE ?", "%#{params[:dropoff]}%").near(params[:pickup], 800)
     end
 
     @markers = @shelters.geocoded.map do |shelter|
       {
         lat: shelter.latitude,
         lng: shelter.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { shelter: shelter })
-        # image_url: helpers.asset_url('../assets/images/logopaw.jpg')
+        infoWindow: render_to_string(partial: "info_window", locals: { shelter: shelter }),
+        image_url: helpers.asset_url('logopaw.jpg')
       }
     end
   end

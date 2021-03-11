@@ -65,7 +65,6 @@
   border-radius: 4px;
   font-family: $body-font;
   margin: 0px 24px 24px 0px;
-  min-height: 362px;
 }
 
 .card-animal > img {
@@ -94,8 +93,12 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+
 }
 
+.min-height-60 {
+  min-height: 60px;
+}
 
 .card-animal-dropoff {
   font-size: 10px;
