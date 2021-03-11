@@ -70,7 +70,6 @@
               <% end %>
             </div>
             <div class="panel lato" id="two-panel">
-              <div class="panel-title lato">Your Requests</div>
               <% if current_user.is_shelter_owner? %>
                 <% @incoming_requests.each do |incoming_r| %>
                   <div class="notification">
@@ -83,7 +82,7 @@
                       <div class="guardian-message">
                         <p><small>Guardian Message:</small></p>
                         <p><%= incoming_r.chatroom.messages.last.content.truncate(30) %>  </p>
-                          <%= link_to "Chat with User", request_path(request), class: "chat-sec-btn" %>
+                          <%= link_to "Chat with User", request_path(incoming_r), class: "chat-sec-btn" %>
                       </div>
                       <div class="request-status">
                         <p><small>Request Status</small></p>
@@ -102,7 +101,6 @@
             </div>
             <div class="panel lato" id="three-panel">
               <% if current_user.is_shelter_owner? %>
-                <div class="panel-title lato">Your Shelters</div>
                 <br>
                 <% @shelters.each do |shelter| %>
                 <div class="notification">
