@@ -2,6 +2,13 @@
   width: 40px;
   border-radius: 50%;
 }
+
+.avatar-lg {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 .avatar-large {
   width: 150px;
   height: 150px;

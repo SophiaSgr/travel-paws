@@ -1,19 +1,23 @@
 <div class="container">
       <div class="user-info-card text-center mt-4 p-4 lato">
-          <h1 class="lato light profile-header-style">Welcome to your Dashboard, <bold><%= current_user.first_name %></bold></h1>
+          <h1 class="lato light profile-header-style mb-5">Welcome to your profile, <bold><%= current_user.first_name %></bold></h1>
+        <div class="d-flex py-2">
+          <div class="flex-grow-1 w-50">
             <% if current_user.avatar.attached? %>
-              <%= cl_image_tag current_user.avatar.key, class:
-            "avatar-round", height: 90, width: 90, crop: :fill %>
+            <%= cl_image_tag current_user.avatar.key, class: "avatar-lg avatar-bordered", height: 90, width: 90, crop: :fill %>
             <% else %>
-              <%= cl_image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-round" %>
+              <%= cl_image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-lg avatar-bordered" %>
             <% end %>
-        <h5 class="text-left lato light"><strong> Your Profile Information</strong></h5>
-        <p class='text-left color: white; lato light'><%= current_user.first_name%> <%= current_user.last_name%></p>
-        <p class="text-left lato light"><%= current_user.email %></p>
-        <p class="text-left lato light"><%= current_user.bio%></p>
-        <div class="text-left">
-          <div id="sec-btn-dashboard">
-            <%= "Edit" %>
+
+          </div>
+          <div class="bio-text">
+            <p class="text-right lato light color-grey"><%= current_user.first_name%> <%= current_user.last_name%> | <%= current_user.email %></p>
+            <p class="text-right lato light color-grey"><%= current_user.bio%></p>
+            <div class="text-right">
+              <div id="sec-btn-dashboard">
+                <%= "Edit" %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
