@@ -30,7 +30,7 @@
                 <div class="w-100">
                   <div class="card-animal-dropoff text-right"><p>Dropoff <i class="fas fa-map-marker"></i><%= animal.dropoff %></p></div>
                   <h2><%= animal.name %></h2>
-                  <p><%= animal.medical_information %></p>
+                  <p><%= animal.medical_information[0..50]+"..." %></p>
                 <div class="detail-link">
                  <%= link_to 'MORE DETAILS', animal_path(animal), class: 'prime-btn' %>
                  </div>
