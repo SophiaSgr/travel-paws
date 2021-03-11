@@ -21,6 +21,14 @@
 @import "dashboard/field-styling";
 @import "dashboard/user-bio";
 @import "components/back-sec-btn";
-
 @import "requests/show";
+
 @import "dashboard/accept-decline-btn";
+
+
+
+.page-content {
+  min-height: calc(100vh - 56px);
+}
+
+
