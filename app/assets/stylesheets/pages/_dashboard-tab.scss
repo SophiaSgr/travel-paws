@@ -20,10 +20,10 @@ h2{
 
 }
 .wrapper-tabs{
-  display:flex;
-  flex-direction: column;
-  align-items: center;
   position: relative;
+  width: 60%;
+  justify-content: center;
+  margin: 0 auto;
 }
 .tab{
   cursor: pointer;
@@ -48,6 +48,7 @@ h2{
 .panel{
   display:none;
   animation: fadein .8s;
+
 }
 @keyframes fadein {
     from {
