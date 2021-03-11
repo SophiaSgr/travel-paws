@@ -116,6 +116,7 @@
 
 .card-product {
 
+  // margin-top: 50px;
   overflow: hidden;
   height: 600px;
   background: white;
@@ -182,3 +183,17 @@
   resize: none;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
+
+.button-fix {
+  display: grid;
+
+  .sec-btn {
+    width: 158px;
+  }
+
+  .center-btn {
+    width: 258px;
+  }
+}
+
+
