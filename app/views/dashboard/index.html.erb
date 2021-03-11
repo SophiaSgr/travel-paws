@@ -1,6 +1,6 @@
 <div class="container-profile">
   <div class="container-profile-user">
-    <div class="user-info-card text-center p-4 lato col-lg-3">
+    <div class="user-info-card text-center lato col-lg-3">
         <h1 class="lato light profile-header-style">Welcome to your Dashboard, <bold><%= current_user.first_name %></bold></h1>
           <% if current_user.avatar.attached? %>
             <%= cl_image_tag current_user.avatar.key, class:
