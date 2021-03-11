@@ -4,7 +4,7 @@
 
 
 <div class="container-fluid d-flex mb-5">
-  <div class="row">
+  <div class="row mt-5">
     <div class="col-8">
       <div class="card-product">
         <div id="card-img">
@@ -69,13 +69,15 @@
         <div class="lato normal">
           <h5><strong>Get in touch with the shelter:</strong></h5>
           <%= simple_form_for [@animal, @request] do |f| %>
-            <%= f.input :message, input_html: {rows: 8} %>
-            <label class="sec-btn sec-btn-file">Upload Passport
-              <span style="display:none;">
-                <%= f.input :passport, as: :file, class: "hidden" %>
-              </span>
-              </label>
-            <%= f.submit "Become my Guardian", class: " center-btn prime-btn justify-content-center" %>
+            <div class="button-fix">
+              <%= f.input :message, input_html: {rows: 8} %>
+              <label class="sec-btn sec-btn-file">Upload Passport
+                <span style="display:none;">
+                  <%= f.input :passport, as: :file, class: "hidden" %>
+                </span>
+                </label>
+              <%= f.submit "Become my Guardian", class: "center-btn prime-btn justify-content-center" %>
+            </div>
           <% end %>
         </div>
       </div>

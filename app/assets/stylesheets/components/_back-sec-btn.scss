@@ -15,9 +15,40 @@
     -moz-transition: all 0.4s;
     transition: all 0.4s;
     position: absolute;
-    top: 70px;
-    left: 16px;
+    margin-top:0px;
+    margin-left:20px;
+    &:hover {
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        color: #fff;
+        transform: translateY(-5px);
+        text-decoration: none;
+        background-color: #26272b;
+        color: rgb(255, 255, 255);
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        transition: all 0.2s;
+
+    }
+}
+
+.chat-sec-btn{
+  text-decoration: none;
+    background: #26272b;
+    border-radius: 3px;
+    color: white;
+    border: 1px solid #26272b;
+    font-size: 11px;
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 7px 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
     z-index: 2;
+    width: 151px;
     &:hover {
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
         color: #fff;

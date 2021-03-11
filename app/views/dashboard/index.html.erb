@@ -79,17 +79,22 @@
                     <% else %>
                       <%= image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-profile-dashboard"%>
                     <% end %>
-                    <div class="notification-content d-flex">
+                    <div class="notification-content d-flex justify-content-between">
                       <div class="guardian-message">
-                        <p><%= incoming_r.message %> <%= "..." %> <%= link_to "Chat with User", request_path(request), class: "back-sec-btn" %></p>
+                        <p><small>Guardian Message:</small></p>
+                        <p><%= incoming_r.chatroom.messages.last.content.truncate(30) %>  </p>
+                          <%= link_to "Chat with User", request_path(request), class: "chat-sec-btn" %>
                       </div>
-                      <p><small>Guardian Message:</small></p>
-                      <p><small>Request Status</small></p>
-                      <p><%= incoming_r.status %></p>
-                      <% if incoming_r.pending? %>
-                        <%= link_to "Accept", accept_path(incoming_r), method: :patch, controller: "requests_controller", class: "accept-btn" %>
-                        <%= link_to "Decline", decline_path(incoming_r), method: :patch, controller: "requests_controller", class: "decline-btn" %>
-                      <% end %>
+                      <div class="request-status">
+                        <p><small>Request Status</small></p>
+                        <p><%= incoming_r.status %></p>
+                      </div>
+                        <div class="status-button">
+                          <% if incoming_r.pending? %>
+                            <%= link_to "Accept", accept_path(incoming_r), method: :patch, controller: "requests_controller", class: "accept-btn" %>
+                            <%= link_to "Decline", decline_path(incoming_r), method: :patch, controller: "requests_controller", class: "decline-btn" %>
+                          <% end %>
+                        </div>
                     </div>
                   </div>
                   <% end %>
@@ -109,10 +114,14 @@
                   <div class="notification-content">
                     <ul class="list-items-shelter-tabs">
                       <br>
-                      <li> <%= link_to shelter.name, shelters_path, class: "shelter-link-styling" %> <%= link_to "Shelter", shelters_path, class: "shelter-link-styling" %></li>
+                      <h5><%= link_to shelter.name, shelters_path, class: "shelter-link-styling" %> <%= link_to "Shelter", shelters_path, class: "shelter-link-styling" %></h5>
                       <br>
-                      <h6><strong>Location</strong></h6>
-                      <li><%= shelter.address %></li>
+                      <div class="card-animal-dropoff text-left">
+                        <h6 ><strong>Location <i class="fas fa-map-marker"></i> <%= shelter.address %></strong></h6>
+                        <div class="text-right">
+                          <%= link_to "+ ADD ANIMAL", new_shelter_animal_path(shelter), id: "plus-btn-shelter" %>
+                        </div>
+                      </div>
                       <br>
                     </ul>
                   </div>

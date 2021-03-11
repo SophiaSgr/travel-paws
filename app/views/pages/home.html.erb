@@ -11,9 +11,8 @@
         <span class="epsilon ls-medium">and help animals travel home</span>
       </h1>
       <div class="container">
-        <%= form_tag shelters_path, method: :get, class: "search-form" do %> <%=
-        text_field_tag :query, params[:query], class: "form-control lato", placeholder:
-        "What is your travel destination?" %> <%= submit_tag "SEARCH SHELTERS", class:
+        <%= form_tag shelters_path, method: :get, class: "search-form home-form" do %> <%=
+        text_field_tag :pickup, params[:pickup], class: "form-control lato", placeholder: "What is your travel destination?" %> <%= submit_tag "SEARCH SHELTERS", class:
         "prime-btn-landing lato" %> <% end %>
       </div>
       </div>
