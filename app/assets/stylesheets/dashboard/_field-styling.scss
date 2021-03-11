@@ -40,9 +40,14 @@
 
 }
 
-
 .status-button{
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.user-info-card{
+  p{
+    margin-bottom: 6px;
+  }
 }
