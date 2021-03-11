@@ -9,6 +9,7 @@
   flex-direction: column;
   background-color:white;
   border-radius:20px;
+  height: calc(100vh - 100px);
 
 }
 .container-main{
@@ -29,9 +30,9 @@
   text-align: center;
 }
 
-#messages {
+.chat-messages {
   flex-grow: 1;
-  overflow-y: scroll;
+  overflow-x: scroll;
 }
 
 .card-header:first-child {
@@ -76,6 +77,10 @@
     margin-top: 30px;
     border-top: 1px solid #eee;
     background: #f8f8f8;
+    margin-bottom: 20px;
+    .form-group{
+      margin-bottom:0px;
+    }
 }
 .msb-reply input{
     width: 100%;
