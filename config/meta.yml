@@ -1,0 +1,5 @@
+meta_product_name: "TravelPaws"
+meta_title: "TravelPaws - Never travel alone"
+meta_description: "Connect to local shelters & help animals reach their forever homes."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@TravelPaws"   # required for Twitter Cards
