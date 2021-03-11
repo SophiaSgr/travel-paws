@@ -1,133 +1,134 @@
-<div class="container-profile">
-  <div class="container-profile-user">
-    <div class="user-info-card text-center lato col-lg-3">
-        <h1 class="lato light profile-header-style">Welcome to your Dashboard, <bold><%= current_user.first_name %></bold></h1>
-          <% if current_user.avatar.attached? %>
-            <%= cl_image_tag current_user.avatar.key, class:
-          "avatar-round", height: 90, width: 90, crop: :fill %>
-          <% else %>
-            <%= cl_image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-round" %>
-          <% end %>
-        <hr>
-      <h5 class="mt-3 lato light"><strong> Your Profile Information</strong></h5>
-      <br>
-      <p class='color: white; lato light'><%= current_user.first_name%> <%= current_user.last_name%></p>
-      <p class="lato light"><%= current_user.email %></p>
-      <p class="lato light"><%= current_user.bio%></p>
-      <div id="sec-btn-dashboard">
-        <%= "Edit" %>
-      </div>
-    </div>
-  <div class="format lato">
-      <div class="div-tabs">
-        <div class="wrapper-tabs">
-          <input class="radio" id="one" name="group" type="radio" checked />
-          <input class="radio" id="two" name="group" type="radio" />
-          <input class="radio" id="three" name="group" type="radio" />
-          <div class="tabs">
-            <div class="position-tabs">
-              <% if current_user.is_shelter_owner? %>
-                <label class="tab tab-boxshadow-right" id="one-tab" for="one">Outgoing Requests</label>
-                <label class="tab tab-boxshadow-right" id="two-tab" for="two">Incoming Requests</label>
-                <label class="tab tab-boxshadow-right" id="three-tab" for="three">My Shelters</label>
-              <% else %>
-                <label class="tab tab-boxshadow-right" id="one-tab" for="one">Outgoing Requests</label>
-              <% end %>
-            </div>
+<div class="container">
+      <div class="user-info-card text-center mt-4 p-4 lato">
+          <h1 class="lato light profile-header-style">Welcome to your Dashboard, <bold><%= current_user.first_name %></bold></h1>
+            <% if current_user.avatar.attached? %>
+              <%= cl_image_tag current_user.avatar.key, class:
+            "avatar-round", height: 90, width: 90, crop: :fill %>
+            <% else %>
+              <%= cl_image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-round" %>
+            <% end %>
+        <h5 class="text-left lato light"><strong> Your Profile Information</strong></h5>
+        <p class='text-left color: white; lato light'><%= current_user.first_name%> <%= current_user.last_name%></p>
+        <p class="text-left lato light"><%= current_user.email %></p>
+        <p class="text-left lato light"><%= current_user.bio%></p>
+        <div class="text-left">
+          <div id="sec-btn-dashboard">
+            <%= "Edit" %>
           </div>
-          <div class="panels lato">
-            <div class="panel" id="one-panel">
-              <div class="panel-title">Become a Guardian</div>
-              <% @outgoing_requests.each do |request| %>
-                <div class="notification">
-                  <% if request.animal.photos  %>
-                    <%= cl_image_tag request.animal.photos.first.key, class: "avatar-square", crop: :fill %>
-                  <% else %>
-                    <%= image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-profile-dashboard"%>
-                  <% end %>
-                  <div class="notification-content">
-                    <p><small>Created At</small></p>
-                    <p><strong><%= request.created_at.strftime("%m/%d/%Y") %></strong></p>
-                    <br>
-                    <p><small>For</small></p>
-                    <p><strong><%= request.animal.name %></strong></p>
-                    <br>
-                    <p><small>Dropoff</small></p>
-                    <p><strong><%= request.animal.dropoff %></strong></p>
-                    <br>
-                    <p><small>Your Message</small></p>
-                    <p><strong><%= request.message.last %>  <%= "..." %> </strong></p>
-                    <br>
-                    <p><small>Request Status</small></p>
-                    <p><strong><%= request.status %></strong></p>
-                  </div>
-                  <div class="lato">
-                    <%= link_to "Chat with Shelter", request_path(request), class: "back-sec-btn" %>
-                  </div>
-                </div>
-              <% end %>
+        </div>
+      </div>
+    <div class="format lato">
+        <div class="div-tabs">
+          <div class="wrapper-tabs">
+            <input class="radio" id="one" name="group" type="radio" checked />
+            <input class="radio" id="two" name="group" type="radio" />
+            <input class="radio" id="three" name="group" type="radio" />
+            <div class="tabs">
+              <div class="position-tabs">
+                <% if current_user.is_shelter_owner? %>
+                  <label class="tab tab-boxshadow-right" id="one-tab" for="one">Outgoing Requests</label>
+                  <label class="tab tab-boxshadow-right" id="two-tab" for="two">Incoming Requests</label>
+                  <label class="tab tab-boxshadow-right" id="three-tab" for="three">My Shelters</label>
+                <% else %>
+                  <label class="tab tab-boxshadow-right" id="one-tab" for="one">Outgoing Requests</label>
+                <% end %>
+              </div>
             </div>
-            <div class="panel lato" id="two-panel">
-              <% if current_user.is_shelter_owner? %>
-                <% @incoming_requests.each do |incoming_r| %>
+            <div class="panels lato">
+              <div class="panel" id="one-panel">
+                <div class="panel-title">Become a Guardian</div>
+                <% @outgoing_requests.each do |request| %>
                   <div class="notification">
-                    <% if incoming_r.animal.photos  %>
-                      <%= cl_image_tag incoming_r.animal.photos.first.key, class: "avatar-square", crop: :fill %>
+                    <% if request.animal.photos  %>
+                      <%= cl_image_tag request.animal.photos.first.key, class: "avatar-square", crop: :fill %>
                     <% else %>
                       <%= image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-profile-dashboard"%>
                     <% end %>
-                    <div class="notification-content d-flex justify-content-between">
-                      <div class="guardian-message">
-                        <p><small>Guardian Message:</small></p>
-                        <p><%= incoming_r.chatroom.messages.last.content.truncate(30) %>  </p>
-                          <%= link_to "Chat with User", request_path(incoming_r), class: "chat-sec-btn" %>
-                      </div>
-                      <div class="request-status">
-                        <p><small>Request Status</small></p>
-                        <p><%= incoming_r.status %></p>
-                      </div>
-                        <div class="status-button">
-                          <% if incoming_r.pending? %>
-                            <%= link_to "Accept", accept_path(incoming_r), method: :patch, controller: "requests_controller", class: "accept-btn" %>
-                            <%= link_to "Decline", decline_path(incoming_r), method: :patch, controller: "requests_controller", class: "decline-btn" %>
-                          <% end %>
+                    <div class="notification-content">
+                      <p><small>Created At</small></p>
+                      <p><strong><%= request.created_at.strftime("%m/%d/%Y") %></strong></p>
+                      <br>
+                      <p><small>For</small></p>
+                      <p><strong><%= request.animal.name %></strong></p>
+                      <br>
+                      <p><small>Dropoff</small></p>
+                      <p><strong><%= request.animal.dropoff %></strong></p>
+                      <br>
+                      <p><small>Your Message</small></p>
+                      <p><strong><%= request.message.last %>  <%= "..." %> </strong></p>
+                      <br>
+                      <p><small>Request Status</small></p>
+                      <p><strong><%= request.status %></strong></p>
+                    </div>
+                    <div class="lato">
+                      <%= link_to "Chat with Shelter", request_path(request), class: "back-sec-btn" %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+              <div class="panel lato" id="two-panel">
+                <% if current_user.is_shelter_owner? %>
+                  <% @incoming_requests.each do |incoming_r| %>
+                    <div class="notification">
+                      <% if incoming_r.animal.photos  %>
+                        <%= cl_image_tag incoming_r.animal.photos.first.key, class: "avatar-square", crop: :fill %>
+                      <% else %>
+                        <%= image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-profile-dashboard"%>
+                      <% end %>
+                      <div class="notification-content d-flex justify-content-between">
+                        <div class="guardian-message">
+                          <p><small>Guardian Message:</small></p>
+                          <p><%= incoming_r.chatroom.messages.last.content.truncate(30) %>  </p>
+                            <%= link_to "Chat with User", request_path(incoming_r), class: "chat-sec-btn" %>
                         </div>
+                        <div class="request-status">
+                          <p><small>Request Status</small></p>
+                          <p><%= incoming_r.status %></p>
+                        </div>
+                          <div class="status-button">
+                            <% if incoming_r.pending? %>
+                              <%= link_to "Accept", accept_path(incoming_r), method: :patch, controller: "requests_controller", class: "accept-btn" %>
+                              <%= link_to "Decline", decline_path(incoming_r), method: :patch, controller: "requests_controller", class: "decline-btn" %>
+                            <% end %>
+                          </div>
+                      </div>
+                    </div>
+                    <% end %>
+                  <% end %>
+              </div>
+              <div class="panel lato" id="three-panel">
+                <% if current_user.is_shelter_owner? %>
+                  <br>
+                  <% @shelters.each do |shelter| %>
+                  <div class="notification">
+                    <% if shelter.photo %>
+                      <%= cl_image_tag shelter.photo.key, class: "avatar-square", crop: :fill %>
+                    <% else %>
+                      <%= image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-profile-dashboard"%>
+                    <% end %>
+                    <div class="notification-content">
+                      <ul class="list-items-shelter-tabs">
+                        <br>
+                        <h5><%= link_to shelter.name, shelters_path, class: "shelter-link-styling" %> <%= link_to "Shelter", shelters_path, class: "shelter-link-styling" %></h5>
+                        <br>
+                        <div class="card-animal-dropoff text-left">
+                          <h6 ><strong>Location <i class="fas fa-map-marker"></i> <%= shelter.address %></strong></h6>
+                          <div class="text-right">
+                            <%= link_to "+ ADD ANIMAL", new_shelter_animal_path(shelter), id: "plus-btn-shelter" %>
+                          </div>
+                        </div>
+                        <br>
+                      </ul>
                     </div>
                   </div>
                   <% end %>
                 <% end %>
-            </div>
-            <div class="panel lato" id="three-panel">
-              <% if current_user.is_shelter_owner? %>
-                <br>
-                <% @shelters.each do |shelter| %>
-                <div class="notification">
-                  <% if shelter.photo %>
-                    <%= cl_image_tag shelter.photo.key, class: "avatar-square", crop: :fill %>
-                  <% else %>
-                    <%= image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-profile-dashboard"%>
-                  <% end %>
-                  <div class="notification-content">
-                    <ul class="list-items-shelter-tabs">
-                      <br>
-                      <h5><%= link_to shelter.name, shelters_path, class: "shelter-link-styling" %> <%= link_to "Shelter", shelters_path, class: "shelter-link-styling" %></h5>
-                      <br>
-                      <div class="card-animal-dropoff text-left">
-                        <h6 ><strong>Location <i class="fas fa-map-marker"></i> <%= shelter.address %></strong></h6>
-                        <div class="text-right">
-                          <%= link_to "+ ADD ANIMAL", new_shelter_animal_path(shelter), id: "plus-btn-shelter" %>
-                        </div>
-                      </div>
-                      <br>
-                    </ul>
-                  </div>
-                </div>
-                <% end %>
-              <% end %>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
 </div>
