@@ -100,9 +100,11 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-  
 }
 
+.min-height-60 {
+  min-height: 60px;
+}
 
 .card-animal-dropoff {
   font-size: 10px;
