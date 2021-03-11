@@ -6,7 +6,7 @@ class SheltersController < ApplicationController
     if params[:pickup].present?
       @shelters = Shelter.near(params[:pickup], 800)
     elsif params[:dropoff].present?
-      @shelters = @shelters.joins(:animals).where("animals.dropoff ILIKE ?", "%#{params[:dropoff]}%")
+      @shelters = @shelters.joins(:animals).where("animals.dropoff ILIKE ?", "%#{params[:dropoff].split(",").first}%")
     elsif params[:pickup].present? && params[:dropoff].present?
       @shelters.joins(:animals).where("animals.dropoff ILIKE ?", "%#{params[:dropoff]}%").near(params[:pickup], 800)
     end
