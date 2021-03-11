@@ -12,6 +12,11 @@
   display: flex;
 }
 
+.shelter-show-hero {
+  width: 900px;
+  margin: 0 auto;
+}
+
 .gray-info-box {
   width: 450px;
   background-color: #26272b;
@@ -27,6 +32,12 @@
     font-size: 12px;
     font: $body-font;
   }
+}
+
+.banner .card-animal-user {
+  position: absolute;
+  right: 70px;
+  bottom: -67px;
 }
 
 .gray-info-box .card-animal-user {

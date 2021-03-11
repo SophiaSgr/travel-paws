@@ -1,8 +1,8 @@
 .banner {
     background-size: cover;
     background-position: 25% 25%;
-    padding: 30px 0px;
-    width: 980px;
+    padding: 24px 0px;
+    position: relative;
     // height: 100%;
     // flex-grow: 1;
 }
@@ -10,12 +10,11 @@
 .banner h1 {
     margin: 0;
     color: white;
-    text-align: right;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-size: 85px;
     font-weight: bold;
     margin-bottom: 20px;
-    padding-top: 24px;
+    padding-top: 50px;
 }
 
 .banner h2 {
@@ -24,14 +23,13 @@
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-size: 24px;
     font-weight: bold;
-    text-align: right;
 }
 
 .banner h3 {
     margin: 0;
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 }
 
