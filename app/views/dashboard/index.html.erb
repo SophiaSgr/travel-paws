@@ -1,8 +1,8 @@
 <div class="container-profile">
-  <h1 class="lato light profile-header-style">Welcome to your Dashboard, <%= current_user.first_name %></h1>
   <div class="container-profile-user">
     <div class="user-info-card text-center p-4">
       <div>
+      <h1 class="lato light profile-header-style">Welcome to your Dashboard, <%= current_user.first_name %></h1>
         <% if current_user.avatar.attached? %>
           <%= cl_image_tag current_user.avatar.key, class:
         "avatar-round", height: 90, width: 90, crop: :fill %>
@@ -13,11 +13,10 @@
         </div class="lato">
             <h5 class="mt-3 lato light"><strong> Your Profile Information</strong></h5>
             <br>
-            <h5>Your Name</h5>
             <p><%= current_user.first_name%><%= current_user.last_name%></p>
-            <h5>Your Email</h5>
+            <br>
             <p><%= current_user.email %></p>
-            <h5>Your Bio</h5>
+            <br>
           <p><%= current_user.bio%></p>
       </div>
   <div class="format lato">
@@ -58,7 +57,7 @@
                     <p><strong><%= request.animal.dropoff %></strong></p>
                     <br>
                     <p><small>Your Message</small></p>
-                    <p><strong><%= request.message.first(50) %>  <%= "..." %> </strong></p>
+                    <p><strong><%= request.message.last %>  <%= "..." %> </strong></p>
                     <br>
                     <p><small>Request Status</small></p>
                     <p><strong><%= request.status %></strong></p>
@@ -79,9 +78,11 @@
                     <% else %>
                       <%= image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-profile-dashboard"%>
                     <% end %>
-                    <div class="notification-content">
+                    <div class="notification-content d-flex">
+                      <div class="guardian-message">
+                        <p><%= incoming_r.message %> <%= "..." %> <%= link_to "Chat with User", request_path(request), class: "back-sec-btn" %></p>
+                      </div>
                       <p><small>Guardian Message:</small></p>
-                      <p><%= incoming_r.message %> <%= "..." %> <%= link_to "Chat with User", request_path(request), class: "back-sec-btn" %></p>
                       <p><small>Request Status</small></p>
                       <p><%= incoming_r.status %></p>
                       <% if incoming_r.pending? %>
@@ -107,8 +108,7 @@
                   <div class="notification-content">
                     <ul class="list-items-shelter-tabs">
                       <br>
-                      <h6><strong>Shelter</strong></h6>
-                      <li><%= shelter.name %></li>
+                      <li> <%= link_to shelter.name, shelters_path, class: "shelter-link-styling" %> <%= link_to "Shelter", shelters_path, class: "shelter-link-styling" %></li>
                       <br>
                       <h6><strong>Location</strong></h6>
                       <li><%= shelter.address %></li>
