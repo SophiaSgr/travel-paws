@@ -18,9 +18,10 @@ jimmy = User.new(
   username: 'jimmylovesanimals',
   mobile_number: "0178 2689374",
   first_name: "Jimmy",
-  last_name: "Blue"
-
+  last_name: "Blue",
+  bio: "Hi, I'm Jimmy. I work in an NGO in Greece. In my free time I often volunteer for animal shelters and co-lead one shelter in Greece myself."
 )
+
 file = URI.open('https://cdn.fastly.picmonkey.com/contentful/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=800&q=70')
 jimmy.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 jimmy.save
@@ -32,8 +33,11 @@ william = User.new(
   last_name:"King",
   username:"wgking",
   password: "123456",
-  mobile_number: "0160 27452875"
+  mobile_number: "0160 27452875",
+  bio: "Hi y'all, I'm Will. Originally from England, I lived in Berlin for the past 5 years. I'm a passionate traveller and like the idea to help animals reach their new families!"
+
 )
+
 file = URI.open('https://cultivatedculture.com/wp-content/uploads/2019/12/LinkedIn-Profile-Picture-Example-Tynan-Allan.jpeg')
 william.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 william.save
@@ -43,7 +47,8 @@ bill = User.new(
   first_name:"Billy",
   last_name:"Frieske",
   username:"billylovesdogs",
-  password: "123456"
+  password: "123456",
+  bio: "I'm Bill. I work in an NGO in Greece. In my free time I often volunteer for animal shelters and co-lead one shelter in Greece myself."
 )
 file = URI.open('https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
 bill.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
@@ -58,6 +63,7 @@ sophia = User.new(
   mobile_number: "0175 2896423",
   bio: "Hi, my name is Sophia and I am the owner of the shelter 'Life for animals' in Crete, Greece. Alongside my own shelter I collaborate with many other shelters throughout Greece."
 )
+
 file = URI.open('https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
 sophia.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 sophia.save
@@ -67,7 +73,9 @@ alty = User.new(
   first_name:"Alty",
   last_name:"Altynai",
   username:"AltylovesCaaaaats",
-  password: "123456"
+  password: "123456",
+  bio: "I'm Alty. I work as an environmetal orgainsation in Berlin. I love the idea of becoming a travel guardian for animals, and already looking forward for my first mission!"
+
 )
 file = URI.open('https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1949&q=80')
 alty.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
@@ -78,7 +86,9 @@ sofia = User.new(
   first_name: "Sofia",
   last_name: "Sagerson",
   username: "Poodlegirl115",
-  password: "123456"
+  password: "123456",
+  bio: "I'm Sophia. A freelance web-developer, in my free time I often volunteer for animal shelters and now came across this opportunity to help animals reach their new homes. Love the idea!"
+
 )
 file = URI.open('https://images.unsplash.com/photo-1525879000488-bff3b1c387cf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
 sofia.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
@@ -301,7 +311,10 @@ relaxo = Animal.new(
   shelter: lifeforanimals,
   dropoff: "Munich, Germany"
 )
-file = URI.open('https://ak.picdn.net/shutterstock/videos/15734035/thumb/1.jpg')
+file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl0GS3DuI5kA2Bdx6BQpv1IXx3Jn967sQOiA&usqp=CAU')
+relaxo.photos.attach(io: file, filename: 'relaxo.jpg', content_type: 'image/jpg')
+relaxo.save
+file = URI.open('https://i.pinimg.com/originals/9d/2e/a8/9d2ea819ca3ee412dafb16b3b3c394be.jpg')
 relaxo.photos.attach(io: file, filename: 'relaxo.jpg', content_type: 'image/jpg')
 relaxo.save
 
@@ -312,7 +325,7 @@ george = Animal.new(
   size: "23cm",
   age: " ≈ 5 1/2",
   medical_information: "neutered, flea treatment, vaccinated, chipped",
-  description: "George is just aweseom. He's super chilled, likes to be petted and enjoys strollling around. He has a great heart and has no pfoblem with children making him and family friendly companian.",
+  description: "George is just awesome. He's super chilled, likes to be petted and enjoys strollling around. He has a great heart and has no pfoblem with children making him and family friendly companian.",
   race: "unknown",
   shelter: lifeforanimals,
   dropoff: "Athens, Greece"
@@ -336,6 +349,15 @@ hamlet = Animal.new(
 file = URI.open('https://d17fnq9dkz9hgj.cloudfront.net/uploads/2018/02/Affenpinscher-Cropped.jpg')
 hamlet.photos.attach(io: file, filename: 'hamlet.jpg', content_type: 'image/jpg')
 hamlet.save
+
+file = URI.open('https://cdn.breedingbusiness.com/wp-content/uploads/2016/06/black-griffon-bruxellois-800x600.jpg')
+hamlet.photos.attach(io: file, filename: 'hamlet.jpg', content_type: 'image/jpg')
+hamlet.save
+
+file = URI.open('https://www.pets4homes.co.uk/images/classifieds/2014/08/08/720864/large/kc-reg-rough-coat-black-and-tan-griffon-puppy-dog-53e4913000431.jpg')
+hamlet.photos.attach(io: file, filename: 'hamlet.jpg', content_type: 'image/jpg')
+hamlet.save
+
 
 swiffer = Animal.new(
   name: "Swiffer",
@@ -367,6 +389,12 @@ shawn = Animal.new(
   dropoff: "Lissabon, Portugal"
 )
 file = URI.open('https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg')
+shawn.photos.attach(io: file, filename: 'shawn.jpg', content_type: 'image/jpg')
+shawn.save
+file = URI.open('https://previews.123rf.com/images/okssi68/okssi681803/okssi68180300014/97036648-beautiful-red-cat-in-a-cage-shelter-for-homeless-animals.jpg')
+shawn.photos.attach(io: file, filename: 'shawn.jpg', content_type: 'image/jpg')
+shawn.save
+file = URI.open('https://c.pxhere.com/photos/ac/38/cat_kitten_red_mackerel_tabby_cat_baby_young_cat_red_cat_grass_wooden_wall-669735.jpg!s')
 shawn.photos.attach(io: file, filename: 'shawn.jpg', content_type: 'image/jpg')
 shawn.save
 
