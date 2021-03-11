@@ -14,8 +14,10 @@
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
     transition: all 0.4s;
-    margin-bottom:20px;
-    margin-top:20px;
+    position: absolute;
+    top: 70px;
+    left: 16px;
+    z-index: 2;
     &:hover {
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
         color: #fff;

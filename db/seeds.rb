@@ -52,7 +52,7 @@ bill.save
 sophia = User.new(
   email: "sophia@gmail.de",
   first_name: "Sophia",
-  last_name: "Sagé",
+  last_name: "Sager",
   username: "sagio",
   password: "123456",
   mobile_number: "0175 2896423",

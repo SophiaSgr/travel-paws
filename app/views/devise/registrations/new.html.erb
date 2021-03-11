@@ -10,6 +10,7 @@
             <%= f.input :first_name %>
             <%= f.input :last_name %>
             <%= f.input :username %>
+            <%= f.input :bio %>
             <%= f.input :email,
                         required: true,
                         autofocus: true,
@@ -23,7 +24,7 @@
                         input_html: { autocomplete: "new-password" } %>
                         <label class="sec-btn sec-btn-file">Upload picture
                         <span style="display:none;">
-                        <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "hidden" %>
+                        <%= f.input :avatar, as: :file, class: "hidden" %>
                         </span>
                         </label><br>
           </div>

@@ -35,9 +35,11 @@ import "bootstrap";
 
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  initAutocomplete();
 })
 
 import { initChatroomCable } from '../channels/chatroom_channel'
@@ -45,3 +47,4 @@ import { initChatroomCable } from '../channels/chatroom_channel'
 document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
 })
+
