@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TravelPaws - Connect to local shelters & help animals reach their forever homes.</title>
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wT///8+Fw8G/xcPBv9rVkD/////FP///xL///8aa1ZA/xcPBv8XDwb/////GwAAAAAAAAAAAAAAAAAAAAD///8kFw8G/xcPBv8XDwb/Fw8G/xcPBv8XDwb/Fw8G/xcPBv8XDwb/Fw8G/2tWQP////8GAAAAAAAAAAAAAAAA////ERcPBv8XDwb/Fw8G/xcPBv8XDwb/Fw8G/xcPBv8XDwb/Fw8G/xcPBv9rVkD/////CQAAAAAAAAAAAAAAAAAAAABrVkD/Fw8G/xcPBv8XDwb/Fw8G/xcPBv8XDwb/Fw8G/xcPBv8XDwb/////OwAAAAAAAAAAAAAAAP///wH///8G////KRcPBv8XDwb/Fw8G/xcPBv8XDwb/Fw8G/xcPBv8XDwb/a1ZA/wAAAAAAAAAAAAAAAP///wr///9S////cf///zxrVkD/Fw8G/xcPBv8XDwb/Fw8G/xcPBv8XDwb/a1ZA/////yj///9B////EAAAAAD///83Fw8G/xcPBv8XDwb/////EmtWQP8XDwb/Fw8G/xcPBv8XDwb/a1ZA/////yRNOCL/Fw8G/xcPBv////8VFw8G/xcPBv8XDwb/Fw8G/////z7///8B////Qk04Iv9NOCL/a1ZA/////x3///9GFw8G/xcPBv8XDwb/Fw8G/xcPBv8XDwb/Fw8G/xcPBv////8gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////JRcPBv8XDwb/Fw8G/xcPBv8XDwb/Fw8G/xcPBv9rVkD/////GP///0P///8TAAAAAP///wb///9C////Of///wQXDwb/Fw8G/xcPBv8XDwb/////P2tWQP9rVkD/////HGtWQP8XDwb/Fw8G/////wz///8mTTgi/004Iv9NOCL/////GhcPBv8XDwb/////YwAAAAD///8M////DE04Iv8XDwb/Fw8G/xcPBv////9E////UBcPBv8XDwb/Fw8G/2tWQP////8G////F////xYAAAAAAAAAAP///wNNOCL/Fw8G/xcPBv8XDwb/////Tf///2MXDwb/Fw8G/xcPBv9NOCL/AAAAAAAAAAAAAAAAAAAAAAAAAAD///8DTTgi/xcPBv8XDwb/a1ZA/////y3///9LFw8G/xcPBv8XDwb/TTgi/////wEAAAAAAAAAAAAAAAAAAAAAAAAAAGtWQP8XDwb/Fw8G/2tWQP////8a////ExcPBv8XDwb/Fw8G/2tWQP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa1ZA/2tWQP////8m////BwAAAAD///8pTTgi/2tWQP////8IAAAAAAAAAAAAAAAA8ccAAOADAADgAwAA4AcAAPAHAADwDwAAiBEAAA4wAAAP8AAAD/AAAJGJAADhhwAA4YcAAOGHAADhhwAA888AAA==" rel="icon" type="image/x-icon" />
+    <%= favicon_link_tag %>
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:title" content="<%= meta_title %>">
+    <meta name="twitter:description" content="<%= meta_description %>">
+    <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:image:src" content="<%= meta_image %>">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
