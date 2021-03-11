@@ -37,6 +37,7 @@ gem 'simple_form'
 gem 'devise'
 # Geocoding
 gem 'geocoder'
+gem "algoliasearch-rails"
 
 group :development, :test do
   gem 'pry-byebug'
