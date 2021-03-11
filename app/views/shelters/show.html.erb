@@ -1,51 +1,52 @@
-
-
 <% if @shelter.photo.attached? %>
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @shelter.photo.key%>')">
 <% else %>
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://source.unsplash.com/600x600/?dogs')">
 <% end %>
-    <div class="hero">
+    <div class="hero shelter-show-hero">
       <div class="container">
         <h1 class="open-sans lato ls-xlarge bold line-height-header"><%= @shelter.name %></h1>
         <h2 class="lato thin ls-xlarge line-height-h2"><%= @shelter.address %></h2>
-        <p class="epsilon normal ls-medium line-height-text"><%= @shelter.description %></p>
-        <% if current_user.id == @shelter.user_id %>
-          <%= link_to "+ Add Animal", new_shelter_animal_path(@shelter), id: "plus-btn" %>
-        <% end %>
+        <p class="epsilon normal ls-medium line-height-text"><%= @shelter.description %>
+        </p>
       </div>
     </div>
+    <img src="<%= cl_image_path @shelter.user.avatar.key %>" class="card-animal-user avatar-large avatar-bordered" />
+    <% if current_user == @shelter.user %>
+          <%= link_to "+ Add Animal", new_shelter_animal_path(@shelter), id: "plus-btn" %>
+        <% end %>
   </div>
+  <div class="container">
 
-
-
-<div class="container">
-  <%= link_to "back",  shelters_path, class: 'back-sec-btn ml-1'%>
-</div>
-
-
-<div class="container">
-  <div class='row'>
-    <% @shelter.animals.each do |animal|  %>
-      <div class="col-sm-12 col-md-4">
-        <div class="animal-card">
-          <% if animal.photos.attached? %>
-            <div id='main'>
-              <%= cl_image_tag animal.photos.first.key, id: 'card-image', class: "card-img-top"%>
-            </div>
-          <% end %>
-          <div id="textbois" class="p-4">
-            <h2> <%= animal.name %> </h2>
-            <h5 id="codepenio"> Dropoff: <%= animal.dropoff %> </h5>
-            <div id="hotlinks" style="margin-left: 48px; margin-top: 25px;">
-              <%= link_to 'MORE DETAILS', animal_path(animal), class: 'prime-btn' %>
-            </div>
+    <div class="animal-cards">
+      <div class="row">
+        <% @shelter.animals.each do |animal|  %>
+        <div class="col-md-4">
+            <div class="card-animal">
+              <% if animal.photos.attached? %>
+                <%= cl_image_tag animal.photos.first.key %>
+              <% end %>
+              <div class="card-animal-infos">
+                <div class="w-100">
+                  <div class="card-animal-dropoff text-right"><p>Dropoff <i class="fas fa-map-marker"></i><%= animal.dropoff %></p></div>
+                  <h2><%= animal.name %></h2>
+                  <p><%= animal.medical_information %></p>
+                <div class="detail-link">
+                 <%= link_to 'MORE DETAILS', animal_path(animal), class: 'prime-btn' %>
+                 </div>
+              </div>
+          </div>
           </div>
         </div>
+        <% end %>
       </div>
-    <% end %>
   </div>
 </div>
 
 
-  
+
+
+  <div class="container">
+    <%= link_to "back",  shelters_path, class: 'back-sec-btn ml-1'%>
+  </div>
+
