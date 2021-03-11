@@ -9,9 +9,35 @@
     cursor: pointer;
     display: inline-block;
     position: absolute;
-    position: absolute;
     bottom: -16px;
     right: 250px;
+
+
+    &:hover {
+
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        color: #26272b;
+        transform: translateY(-2px);
+        border: 1px solid white;
+        text-decoration: none;
+        background-color: #26272b;
+        color: white;
+
+    }
+
+}
+
+#plus-btn-shelter {
+border: 1px solid #000000;
+    font-size: 12px;
+    background-color: white;
+    color: #26272b;
+    padding: 8px 16px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+
 
 
     &:hover {
