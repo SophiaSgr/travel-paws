@@ -1,20 +1,25 @@
 
 <div class="container">
       <div class="user-info-card text-center mt-4 p-4 lato">
-          <h1 class="lato light profile-header-style">Welcome to your Dashboard, <bold><%= current_user.first_name %></bold></h1>
+          <h1 class="lato light profile-header-style mb-5">Welcome to your profile, <bold><%= current_user.first_name %></bold></h1>
+        <div class="d-flex py-2">
+          <div class="flex-grow-1 w-50">
             <% if current_user.avatar.attached? %>
-              <%= cl_image_tag current_user.avatar.key, class:
-            "avatar-round", height: 120, width: 120, crop: :fill %>
+            <%= cl_image_tag current_user.avatar.key, class: "avatar-lg avatar-bordered", height: 90, width: 90, crop: :fill %>
+
             <% else %>
-              <%= cl_image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-round" %>
+              <%= cl_image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-lg avatar-bordered" %>
             <% end %>
-        <h5 class="text-left lato light"><strong> Your Profile Information</strong></h5>
-        <p class='text-left color: white; lato light'><%= current_user.first_name%> <%= current_user.last_name%></p>
-        <p class="text-left lato light"><%= current_user.email %></p>
-        <p class="text-left lato light"><%= current_user.bio%></p>
-        <div class="text-left">
-          <div id="sec-btn-dashboard">
-            <%= "Edit" %>
+
+          </div>
+          <div class="bio-text">
+            <p class="text-right lato light color-grey"><%= current_user.first_name%> <%= current_user.last_name%> | <%= current_user.email %></p>
+            <p class="text-right lato light color-grey"><%= current_user.bio%></p>
+            <div class="text-right">
+              <div id="sec-btn-dashboard">
+                <%= "Edit" %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -45,24 +50,33 @@
                     <% else %>
                       <%= image_tag "https://media.defense.gov/2020/Feb/19/2002251686/700/465/0/200219-A-QY194-002.JPG", class: "avatar-profile-dashboard"%>
                     <% end %>
-                    <div class="notification-content">
-                      <p><small>Created At</small></p>
-                      <p><strong><%= request.created_at.strftime("%m/%d/%Y") %></strong></p>
-                      <br>
-                      <p><small>For</small></p>
-                      <p><strong><%= request.animal.name %></strong></p>
-                      <br>
-                      <p><small>Dropoff</small></p>
-                      <p><strong><%= request.animal.dropoff %></strong></p>
-                      <br>
-                      <p><small>Your Message</small></p>
-                      <p><strong><%= request.message.last %>  <%= "..." %> </strong></p>
-                      <br>
-                      <p><small>Request Status</small></p>
-                      <p><strong><%= request.status %></strong></p>
-                    </div>
-                    <div class="lato">
-                      <%= link_to "Chat with Shelter", request_path(request), class: "chat-prim-btn" %>
+                    <div class="notification-content d-flex align-items-start">
+                      <div class="flex-item">
+                        <div>
+                          <p><small>Created At</small></p>
+                          <p><strong><%= request.created_at.strftime("%m/%d/%Y") %></strong></p>
+                        </div>
+                        <div>
+                          <p><small>For</small></p>
+                          <p><strong><%= request.animal.name %></strong></p>
+                        </div>
+                        <div>
+                          <p><small>Dropoff</small></p>
+                          <p><strong><%= request.animal.dropoff %></strong></p>
+                        </div>
+                      </div>
+                      <div class="flex-item flex-grow-1 d-flex flex-column justify-content-between">
+                        <div>
+                          <p><small>Your Message</small></p>
+                          <p><strong><%= request.chatroom.messages.last.content.truncate(30) %> </strong></p>
+                        </div>
+                          <%= link_to "Chat with Shelter", request_path(request), class: "chat-sec-btn" %>
+                      </div>
+                      <div class="flex-item">
+                        <p><small>Request Status</small></p>
+                        <p><strong><%= request.status %></strong></p>
+                      </div>
+
                     </div>
                   </div>
                 <% end %>

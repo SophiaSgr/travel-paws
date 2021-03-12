@@ -1,3 +1,13 @@
+.flex-item {
+  padding: 0px 16px;
+  height: 120px;
+  font-size: 14px;
+}
+
+.bio-text {
+  text-align: right;
+  width: 600px;
+}
 
 
 @import url('https://fonts.googleapis.com/css?family=Arimo:400,700&display=swap');
@@ -26,7 +36,7 @@ h2{
 .tab{
   cursor: pointer;
   padding:10px 20px;
-  margin:0px 2px;
+  margin:0px 2px 0px 0px;
   background:#26272b;
   display:inline-block;
   color:#fff;
@@ -35,7 +45,7 @@ h2{
 .panels{
   background:#fffffff6;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-  min-height:200px;
+  min-height: 500px;
   width: 100%;
   border-radius:3px;
   overflow:hidden;
