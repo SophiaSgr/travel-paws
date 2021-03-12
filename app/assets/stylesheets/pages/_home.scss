@@ -111,4 +111,13 @@ section:before{
    section{height:700px}
  }
 
-
+@media screen and (min-width: 370px) {
+  .wrapper{
+    top:60%;
+  }
+}
+@media screen and (min-width: 600px) {
+  .wrapper{
+    top:40%;
+  }
+}
