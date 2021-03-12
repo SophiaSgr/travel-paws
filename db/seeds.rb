@@ -87,7 +87,7 @@ sofia = User.new(
   last_name: "Sagerson",
   username: "Poodlegirl115",
   password: "123456",
-  bio: "I'm Sophia. A freelance web-developer, in my free time I often volunteer for animal shelters and now came across this opportunity to help animals reach their new homes. Love the idea!"
+  bio: "I'm Sofia. A freelance web-developer, in my free time I often volunteer for animal shelters and now came across this opportunity to help animals reach their new homes. Love the idea!"
 
 )
 file = URI.open('https://images.unsplash.com/photo-1525879000488-bff3b1c387cf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
@@ -139,6 +139,17 @@ grevenashelter = Shelter.new(
 file = URI.open('https://www.aspcapro.org/sites/default/files/styles/image_component/public/resource/card/image/FIR_H7N2Cats_01_25_17_AKE_004.jpg?itok=2pY7VvgD')
 grevenashelter.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 grevenashelter.save
+
+lifeforanimals = Shelter.new(
+  name: "Life for Animals",
+  address: "Crete, Greece",
+  description: "We are a shelter that takes in any kind of stray animals in order to give them another shot at a peaceful life. Currently we have over 96 animals in our care and appreciate any help the we can get. Especially in terms of funding and transportation as we are a small, non-governmental establishment.",
+  user: sophia
+)
+
+file = URI.open('https://cdn.sanity.io/images/0vv8moc6/dvm360/e28735abb3f1073399b64e4ee92b900ed556c357-5314x3543.jpg?auto=format')
+lifeforanimals.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+lifeforanimals.save
 
 
 florinahome = Shelter.new(
@@ -209,18 +220,8 @@ patrasanimals.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'imag
 patrasanimals.save
 
 
-
 # ------------------------------------------------------- old seeds shelters
-lifeforanimals = Shelter.new(
-  name: "Life for Animals",
-  address: "Crete, Greece",
-  description: "We are a shelter that takes in any kind of stray animals in order to give them another shot at a peaceful life. Currently we have over 96 animals in our care and appreciate any help the we can get. Especially in terms of funding and transportation as we are a small, non-governmental establishment.",
-  user: sophia
-)
 
-file = URI.open('https://cdn.sanity.io/images/0vv8moc6/dvm360/e28735abb3f1073399b64e4ee92b900ed556c357-5314x3543.jpg?auto=format')
-lifeforanimals.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
-lifeforanimals.save
 
 furryfriends =  Shelter.new(
   name: "Furry Friends",
