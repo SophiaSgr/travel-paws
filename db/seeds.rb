@@ -42,17 +42,17 @@ file = URI.open('https://cultivatedculture.com/wp-content/uploads/2019/12/Linked
 william.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 william.save
 
-bill = User.new(
-  email:"bilbo@gmail.de",
-  first_name:"Billy",
+danny = User.new(
+  email:"danny@gmail.de",
+  first_name:"Danny",
   last_name:"Frieske",
-  username:"billylovesdogs",
+  username:"dannylovesdogs",
   password: "123456",
-  bio: "I'm Bill. I work in an NGO in Greece. In my free time I often volunteer for animal shelters and co-lead one shelter in Greece myself."
+  bio: "I'm Danny. I've been working for different NGOs around the world and love travelling. I love Greece and animals, so where ever there is a chance to help out, I'll do my best :)"
 )
 file = URI.open('https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
-bill.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
-bill.save
+danny.avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+danny.save
 
 sophia = User.new(
   email: "sophia@gmail.de",
@@ -180,7 +180,7 @@ catcitykilkis = Shelter.new(
   name: "Cat City Kilkis",
   address: "Kilkis, Greece",
   description: "We are a shelter that takes in any kind of stray animals in order to give them another shot at a peaceful life. Currently we have over 96 animals in our care and appreciate any help the we can get. Especially in terms of funding and transportation as we are a small, non-governmental establishment.",
-  user: sophia
+  user: alty
 )
 file = URI.open('https://cloudfront-us-east-1.images.arcpublishing.com/tronc/73A4NANAGNCLPO36UVJDXCS7TY.jpg')
 catcitykilkis.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
@@ -213,7 +213,7 @@ patrasanimals = Shelter.new(
   name: "Patras Animals",
   address: "Patras, Greece",
   description: "We are a shelter that takes in any kind of stray animals in order to give them another shot at a peaceful life. Currently we have over 96 animals in our care and appreciate any help the we can get. Especially in terms of funding and transportation as we are a small, non-governmental establishment.",
-  user: sophia
+  user: william
 )
 file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYdngFaV_RES3tZaqHW7DsewMGformheXiVw&usqp=CAU')
 patrasanimals.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
@@ -227,7 +227,7 @@ furryfriends =  Shelter.new(
   name: "Furry Friends",
   address: "Lamia, Greece",
   description: "Our small shelter in Lisbon helps stray city animals find new, forever homes. We depend on private fundings and are a non-state funded shelter. Any help is valuable. Currently we have 55 animals in care.",
-  user: sophia
+  user: alty
 )
 file = URI.open('https://www.onetz.de/sites/default/files/imagecache/ga-large/articlemedia/2020/09/01/3432d4b6-818f-4ef9-86c0-0064024babf8.jpg')
 furryfriends.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
@@ -237,7 +237,7 @@ animalcareev = Shelter.new(
  name: "Animal Care Greece",
   address: "Sparta, Greece",
   description: "We are a shelter with a community and volunteers from many backgrounds trying to find animals a new, loving home.",
-  user: william
+  user: ahmed
 )
 file = URI.open('https://i.ytimg.com/vi/REIGWH6Tedw/maxresdefault.jpg')
 animalcareev.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
@@ -247,7 +247,7 @@ naplespaws = Shelter.new(
   name: "Greek Paws",
   address: "Galatas, Greece",
   description: "We have lots of wonderful people who will open their hearts to rescue a dog, but we do not have enough flight volunteers to bring our dogs to their new homes. If you would like to help our organization and these innocent animals in desperate need, please spread the word that we are always in need of flight volunteers to accompany our rescues from Naples to Germany and Netherlands.",
-  user: bill
+  user: alty
 )
 file = URI.open('https://www.careermatch.com/job-prep/wp-content/uploads/sites/2/2017/11/Animal_Shelter_Worker_Profile_Image.jpg')
 naplespaws.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
@@ -257,7 +257,7 @@ ourdogs = Shelter.new(
   name: "Our Dogs",
   address: "Idra, Greece",
   description: "Our dogs are saved from the streets of Idra, Greece. There are so many deserving rescue dogs there desperately searching for forever homes everyday while at risk of dying on the streets or being euthanized. We are looking for volunteers to accompany the dogs already adopted in other parts of Europe.",
-  user: bill
+  user: alty
 )
 file = URI.open('http://www.goodnet.org/photos/620x0/30012_hd.jpg')
 ourdogs.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
@@ -267,7 +267,7 @@ laika = Shelter.new(
   name: "Laika Fund",
   address: "Lesbos, Greece",
   description: "Our objective is to support efforts to find as many loving homes as possible for these wonderful pups in Lesbos. As we have many partner organisations in Europe, our dogs are frequently adopted abroad. We are thrilled to receive your application to accompany our furry friends to their new forever homes!",
-  user: bill
+  user: ahmed
 )
 
 file = URI.open('https://dailygazette.com/wp-content/uploads/2020/01/012620_HOPErescue_EM-03.jpg')
@@ -278,7 +278,7 @@ happytails = Shelter.new(
   name: "Happy Tails",
   address: "Lesbos, Greece",
   description: "Happy Tails is a non-profit organization that is dedicated to rescuing and rehabilitating injured and abandoned animals, and to finding permanent, loving homes for each of them. Since many of our animals are adopted in Germany and France, we are especially looking for volunteers travelling to these countries.",
-  user: bill
+  user: ahmed
 )
 file = URI.open('https://media.npr.org/assets/img/2011/05/11/dog-rescue-japan_wide-b61e2e6a716f161c97d1561cd8d48354cc13a48d-s800-c85.jpg')
 happytails.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
@@ -288,7 +288,7 @@ animalrescue = Shelter.new(
   name: "Animal Rescue",
   address: "Methana, Greece",
   description: "We are a non-profit organization with a community and volunteers from many backgrounds trying to find animals a new, loving home. We're looking for volunteers to transport dogs and cats rescued from the streets. The most popular travel destinations for our shelter inhabitants are Germany and Netherlands.",
-  user: bill
+  user: ahmed
 )
 file = URI.open('https://live-production.wcms.abc-cdn.net.au/85c3b55e539954483b103f0c2cb919ae?impolicy=wcms_crop_resize&cropH=1351&cropW=2401&xPos=0&yPos=0&width=862&height=485')
 animalrescue.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
