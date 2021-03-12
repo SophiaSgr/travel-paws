@@ -1,8 +1,8 @@
-
+<style></style>
 <div class="container search-bar justify-content-center" style="margin-top: 40px;">
   <div search-center>
     <%= form_tag shelters_path, method: :get, class: "search-form algolia-places-shelters" do %>
-    <%= text_field_tag :pickup, params[:pickpup], class: "form-control lato", placeholder: "Where could you pick up the animal?" %>
+    <%= text_field_tag :pickup, params[:pickpup], class: "form-control lato", placeholder: "Where could you pick up the animal?" style:"position:static;"%>
     <%= text_field_tag :dropoff, params[:dropoff], class: "form-control lato shelter-index-input", placeholder: "Where could you drop off the animal?" %>
     <%= submit_tag "SEARCH SHELTERS", class: "prime-btn-landing lato" %>
     <% end %>
